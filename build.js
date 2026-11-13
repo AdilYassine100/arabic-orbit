@@ -9,6 +9,11 @@ function readJSON(f){
 }
 const settings=readJSON('settings.json'),seo=readJSON('seo.json');
 const data={settings,stories:readJSON('stories.json'),videos:readJSON('videos.json'),books:readJSON('books.json')};
+// Scheduled publishing: hide drafts and items whose publish_date is in the future
+const NOW=new Date();
+const live=x=>x&&!x.draft&&(!x.publish_date||new Date(x.publish_date)<=NOW);
+data.stories=(data.stories||[]).filter(live);
+for(const k in data.videos)data.videos[k]=(data.videos[k]||[]).filter(live);
 const DOMAIN=(settings.domain||'https://arabicorbit.com/').replace(/\/?$/,'/');
 const langs=Object.keys(seo);
 const esc=t=>String(t==null?'':t).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;');

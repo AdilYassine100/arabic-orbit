@@ -35,6 +35,12 @@ components:
       - name: glyph
         label: الكلمة العربية التي تظهر على الصورة المصغّرة
         type: string
+      - name: publish_date
+        label: تاريخ النشر (اتركه فارغًا للنشر فورًا)
+        type: date
+      - name: draft
+        label: مسودة (لا تُنشر)
+        type: boolean
   seo:
     type: object
     fields:
@@ -64,6 +70,12 @@ content:
         label: العنوان بالعربية (مشكولًا)
         type: string
         required: true
+      - name: publish_date
+        label: تاريخ النشر (اتركه فارغًا للنشر فورًا)
+        type: date
+      - name: draft
+        label: مسودة (لا تُنشر)
+        type: boolean
       - name: glyph
         label: كلمة عربية تظهر إن لم توجد صورة
         type: string
