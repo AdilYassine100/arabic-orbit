@@ -4,9 +4,9 @@ on:
     branches: [main]
   workflow_dispatch:
   schedule:
-    - cron: '23 */6 * * *'
+    - cron: '23 */2 * * *'
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 concurrency:
@@ -23,6 +23,15 @@ jobs:
       - run: npm install
       - run: npx playwright install --with-deps chromium
       - run: npm run build
+      - name: Save new YouTube videos to content/
+        run: |
+          if [ -n "$(git status --porcelain content)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+            git add content
+            git commit -m "YouTube: new videos added automatically"
+            git pull --rebase --autostash && git push
+          fi
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
