@@ -5,5 +5,7 @@
   "youtube": "https://www.youtube.com/@LearnArabicHubOfficial",
   "pinterest": "https://www.pinterest.com/admob7913/",
   "shop": "https://payhip.com/AdilStoreBooks",
-  "videos_fallback": "https://www.youtube.com/watch?v=vz872kE6tMk"
+  "videos_fallback": "https://www.youtube.com/watch?v=vz872kE6tMk",
+  "youtube_channel_id": "UCcgoIm3hF-a25gG6tPqhQtQ",
+  "youtube_auto": true
 }
