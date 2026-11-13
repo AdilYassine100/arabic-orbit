@@ -1,0 +1,173 @@
+media:
+  input: public/img
+  output: /img
+
+components:
+  translation:
+    type: object
+    fields:
+      - name: title
+        label: العنوان
+        type: string
+      - name: text
+        label: نص القصة المترجم
+        type: text
+      - name: moral
+        label: العبرة
+        type: string
+  video:
+    type: object
+    fields:
+      - name: label
+        label: الشارة (مثل Lesson 1)
+        type: string
+      - name: title
+        label: عنوان الفيديو
+        type: string
+        required: true
+      - name: description
+        label: وصف قصير
+        type: string
+      - name: url
+        label: رابط يوتيوب
+        type: string
+        required: true
+      - name: glyph
+        label: الكلمة العربية التي تظهر على الصورة المصغّرة
+        type: string
+  seo:
+    type: object
+    fields:
+      - name: title
+        label: عنوان الصفحة في Google (حوالي 60 حرفًا)
+        type: string
+      - name: description
+        label: وصف الصفحة في Google (حوالي 155 حرفًا)
+        type: text
+      - name: language_name
+        label: اسم اللغة في قائمة اللغات
+        type: string
+      - name: locale
+        label: الرمز (لا تغيّره)
+        type: string
+        readonly: true
+
+content:
+  - name: stories
+    label: قصص جحا
+    type: file
+    path: content/stories.json
+    format: json
+    list: true
+    fields:
+      - name: title_ar
+        label: العنوان بالعربية (مشكولًا)
+        type: string
+        required: true
+      - name: glyph
+        label: كلمة عربية تظهر إن لم توجد صورة
+        type: string
+      - name: image
+        label: صورة القصة (عمودية 3:4، يفضَّل أقل من 300 كيلوبايت)
+        type: image
+        options:
+          extensions: [webp, jpg, jpeg, png]
+      - name: text_ar
+        label: النص العربي (كل جملة في سطر)
+        type: text
+        required: true
+      - name: translations
+        label: الترجمات
+        type: object
+        fields:
+          - { name: en, label: English, component: translation }
+          - { name: fr, label: Français, component: translation }
+          - { name: es, label: Español, component: translation }
+          - { name: pt, label: Português, component: translation }
+          - { name: it, label: Italiano, component: translation }
+          - { name: de, label: Deutsch, component: translation }
+          - { name: nl, label: Nederlands, component: translation }
+          - { name: tr, label: Türkçe, component: translation }
+          - { name: ru, label: Русский, component: translation }
+          - { name: id, label: Bahasa Indonesia, component: translation }
+          - { name: zh, label: 中文, component: translation }
+
+  - name: videos
+    label: فيديوهات يوتيوب
+    type: file
+    path: content/videos.json
+    format: json
+    fields:
+      - { name: en, label: English, component: video, list: true }
+      - { name: fr, label: Français, component: video, list: true }
+      - { name: es, label: Español, component: video, list: true }
+      - { name: pt, label: Português, component: video, list: true }
+      - { name: it, label: Italiano, component: video, list: true }
+      - { name: de, label: Deutsch, component: video, list: true }
+      - { name: nl, label: Nederlands, component: video, list: true }
+      - { name: tr, label: Türkçe, component: video, list: true }
+      - { name: ru, label: Русский, component: video, list: true }
+      - { name: id, label: Bahasa Indonesia, component: video, list: true }
+      - { name: zh, label: 中文, component: video, list: true }
+
+  - name: books
+    label: الكتب (النسخ والروابط)
+    type: file
+    path: content/books.json
+    format: json
+    list: true
+    fields:
+      - name: code
+        label: رمز اللغة (EN، FR…)
+        type: string
+        required: true
+      - name: language
+        label: اسم اللغة
+        type: string
+      - name: edition_title
+        label: عنوان النسخة
+        type: string
+      - name: buy_url
+        label: رابط الشراء
+        type: string
+      - name: sample_url
+        label: رابط العيّنة المجانية
+        type: string
+      - name: buy_label
+        label: نص زر الشراء
+        type: string
+      - name: sample_label
+        label: نص زر العيّنة
+        type: string
+
+  - name: settings
+    label: إعدادات عامة (السعر والروابط)
+    type: file
+    path: content/settings.json
+    format: json
+    fields:
+      - { name: price, label: سعر الكتاب, type: string }
+      - { name: facebook, label: رابط فيسبوك, type: string }
+      - { name: youtube, label: رابط قناة يوتيوب, type: string }
+      - { name: pinterest, label: رابط بنتريست, type: string }
+      - { name: shop, label: رابط المتجر, type: string }
+      - { name: videos_fallback, label: الفيديو الذي يظهر للغات بلا فيديوهات, type: string }
+      - { name: domain, label: النطاق (لا تغيّره إلا إن غيّرت اسم الموقع), type: string }
+
+  - name: seo
+    label: السيو (عناوين Google لكل لغة)
+    type: file
+    path: content/seo.json
+    format: json
+    fields:
+      - { name: en, label: English, component: seo }
+      - { name: fr, label: Français, component: seo }
+      - { name: es, label: Español, component: seo }
+      - { name: pt, label: Português, component: seo }
+      - { name: it, label: Italiano, component: seo }
+      - { name: de, label: Deutsch, component: seo }
+      - { name: nl, label: Nederlands, component: seo }
+      - { name: tr, label: Türkçe, component: seo }
+      - { name: ru, label: Русский, component: seo }
+      - { name: id, label: Bahasa Indonesia, component: seo }
+      - { name: zh, label: 中文, component: seo }
