@@ -1,0 +1,12 @@
+{
+  "name": "arabic-orbit",
+  "private": true,
+  "description": "Arabic Orbit website in 11 languages",
+  "scripts": {
+    "build": "node build.js",
+    "setup": "npx playwright install chromium"
+  },
+  "devDependencies": {
+    "playwright": "1.49.1"
+  }
+}

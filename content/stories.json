@@ -1,0 +1,380 @@
+[
+  {
+    "title_ar": "جُحَا وَابْنُهُ وَالْحِمَارُ",
+    "glyph": "حِمَار",
+    "image": "/img/juha1.webp",
+    "text_ar": "خَرَجَ جُحَا وَابْنُهُ إِلَى السُّوقِ مَعَ حِمَارِهِمَا.\nرَكِبَ جُحَا الْحِمَارَ، وَمَشَى ابْنُهُ. فَقَالَ النَّاسُ: «يَا لَهُ مِنْ أَبٍ قَاسٍ!»\nنَزَلَ جُحَا، وَرَكِبَ ابْنُهُ. فَقَالَ النَّاسُ: «وَلَدٌ لَا يَحْتَرِمُ أَبَاهُ!»\nرَكِبَا مَعًا. فَقَالَ النَّاسُ: «مِسْكِينٌ هَذَا الْحِمَارُ!»\nمَشَيَا مَعًا. فَضَحِكَ النَّاسُ وَقَالُوا: «مَعَهُمَا حِمَارٌ وَلَا يَرْكَبَانِهِ!»\nقَالَ جُحَا لِابْنِهِ: «يَا بُنَيَّ، رِضَا النَّاسِ غَايَةٌ لَا تُدْرَكُ.»",
+    "translations": {
+      "en": {
+        "title": "Juha, his son and the donkey",
+        "text": "Juha and his son went to the market with their donkey. Juha rode the donkey and his son walked. People said: “What a harsh father!” Juha got off and his son rode. People said: “A boy who does not respect his father!” They both rode. People said: “Poor donkey!” They both walked. People laughed: “They have a donkey and don’t ride it!” Juha told his son: “My son, you can never please everyone.”",
+        "moral": "You can never please everyone."
+      },
+      "fr": {
+        "title": "Joha, son fils et l'âne",
+        "text": "Joha et son fils allèrent au marché avec leur âne. Joha monta sur l'âne et son fils marcha. Les gens dirent : « Quel père dur ! » Joha descendit et son fils monta. Les gens dirent : « Un fils qui ne respecte pas son père ! » Ils montèrent tous les deux. Les gens dirent : « Pauvre âne ! » Ils marchèrent tous les deux. Les gens rirent : « Ils ont un âne et ne le montent pas ! » Joha dit à son fils : « Mon fils, on ne peut jamais plaire à tout le monde. »",
+        "moral": "On ne peut pas plaire à tout le monde."
+      },
+      "es": {
+        "title": "Yuha, su hijo y el burro",
+        "text": "Yuha y su hijo fueron al mercado con su burro. Yuha montó el burro y su hijo caminó. La gente dijo: «¡Qué padre tan duro!». Yuha bajó y montó su hijo. La gente dijo: «¡Un hijo que no respeta a su padre!». Montaron los dos. La gente dijo: «¡Pobre burro!». Caminaron los dos. La gente se rio: «¡Tienen un burro y no lo montan!». Yuha le dijo a su hijo: «Hijo mío, nunca se puede contentar a todos».",
+        "moral": "Nunca se puede contentar a todos."
+      },
+      "pt": {
+        "title": "Juha, o filho e o burro",
+        "text": "Juha e o filho foram ao mercado com o burro. Juha montou o burro e o filho foi a pé. As pessoas disseram: «Que pai cruel!» Juha desceu e o filho montou. As pessoas disseram: «Um filho que não respeita o pai!» Montaram os dois. As pessoas disseram: «Coitado do burro!» Foram os dois a pé. As pessoas riram: «Têm um burro e não montam nele!» Juha disse ao filho: «Meu filho, nunca se consegue agradar a todos.»",
+        "moral": "Nunca se consegue agradar a todos."
+      },
+      "it": {
+        "title": "Giufà, suo figlio e l'asino",
+        "text": "Giufà e suo figlio andarono al mercato con l'asino. Giufà salì sull'asino e il figlio camminava. La gente disse: «Che padre crudele!» Giufà scese e salì il figlio. La gente disse: «Un figlio che non rispetta il padre!» Salirono tutti e due. La gente disse: «Povero asino!» Camminarono tutti e due. La gente rise: «Hanno un asino e non ci salgono!» Giufà disse al figlio: «Figlio mio, non si può mai accontentare tutti.»",
+        "moral": "Non si può accontentare tutti."
+      },
+      "de": {
+        "title": "Dschuha, sein Sohn und der Esel",
+        "text": "Dschuha und sein Sohn gingen mit ihrem Esel zum Markt. Dschuha ritt, der Sohn ging zu Fuß. Die Leute sagten: „Was für ein harter Vater!“ Dschuha stieg ab und der Sohn ritt. Die Leute sagten: „Ein Sohn, der seinen Vater nicht achtet!“ Beide ritten. Die Leute sagten: „Armer Esel!“ Beide gingen zu Fuß. Die Leute lachten: „Sie haben einen Esel und reiten nicht!“ Dschuha sagte zu seinem Sohn: „Mein Sohn, man kann es nie allen recht machen.“",
+        "moral": "Man kann es nie allen recht machen."
+      },
+      "nl": {
+        "title": "Djoeha, zijn zoon en de ezel",
+        "text": "Djoeha en zijn zoon gingen met hun ezel naar de markt. Djoeha reed en zijn zoon liep. De mensen zeiden: „Wat een harde vader!” Djoeha stapte af en zijn zoon reed. De mensen zeiden: „Een zoon die zijn vader niet respecteert!” Ze reden samen. De mensen zeiden: „Arme ezel!” Ze liepen samen. De mensen lachten: „Ze hebben een ezel en rijden er niet op!” Djoeha zei tegen zijn zoon: „Mijn zoon, je kunt het nooit iedereen naar de zin maken.”",
+        "moral": "Je kunt het nooit iedereen naar de zin maken."
+      },
+      "tr": {
+        "title": "Cuha, oğlu ve eşek",
+        "text": "Cuha ile oğlu eşekleriyle pazara gittiler. Cuha eşeğe bindi, oğlu yürüdü. İnsanlar dedi ki: “Ne katı bir baba!” Cuha indi, oğlu bindi. İnsanlar dedi ki: “Babasına saygısı olmayan bir çocuk!” İkisi birlikte bindiler. İnsanlar dedi ki: “Zavallı eşek!” İkisi birlikte yürüdüler. İnsanlar güldü: “Eşekleri var ama binmiyorlar!” Cuha oğluna dedi ki: “Oğlum, herkesi memnun etmek imkânsızdır.”",
+        "moral": "Herkesi memnun etmek imkânsızdır."
+      },
+      "ru": {
+        "title": "Джуха, его сын и осёл",
+        "text": "Джуха с сыном пошли на рынок со своим ослом. Джуха ехал на осле, а сын шёл пешком. Люди сказали: «Какой жестокий отец!» Джуха слез, и сел сын. Люди сказали: «Сын, который не уважает отца!» Они сели вдвоём. Люди сказали: «Бедный осёл!» Они пошли пешком вдвоём. Люди засмеялись: «У них есть осёл, а они не едут!» Джуха сказал сыну: «Сынок, на всех не угодишь».",
+        "moral": "На всех не угодишь."
+      },
+      "id": {
+        "title": "Juha, anaknya, dan keledai",
+        "text": "Juha dan anaknya pergi ke pasar bersama keledai mereka. Juha menunggang keledai dan anaknya berjalan. Orang-orang berkata: “Ayah yang kejam!” Juha turun dan anaknya naik. Orang-orang berkata: “Anak yang tidak menghormati ayahnya!” Mereka naik berdua. Orang-orang berkata: “Kasihan keledainya!” Mereka berjalan berdua. Orang-orang tertawa: “Punya keledai tapi tidak dinaiki!” Juha berkata kepada anaknya: “Anakku, kita tidak akan pernah bisa menyenangkan semua orang.”",
+        "moral": "Kita tidak bisa menyenangkan semua orang."
+      },
+      "zh": {
+        "title": "朱哈、儿子和驴",
+        "text": "朱哈和儿子牵着驴去集市。朱哈骑驴，儿子走路。人们说：“多么狠心的父亲！”朱哈下来，儿子骑上去。人们说：“不尊敬父亲的孩子！”两人一起骑。人们说：“可怜的驴！”两人一起走。人们笑道：“有驴却不骑！”朱哈对儿子说：“孩子，你永远无法让所有人满意。”",
+        "moral": "你无法让所有人满意。"
+      }
+    }
+  },
+  {
+    "title_ar": "مِسْمَارُ جُحَا",
+    "glyph": "مِسْمَار",
+    "image": "/img/juha2.webp",
+    "text_ar": "بَاعَ جُحَا بَيْتَهُ لِرَجُلٍ، وَاشْتَرَطَ شَرْطًا وَاحِدًا: أَنْ يَبْقَى لَهُ مِسْمَارٌ فِي الْحَائِطِ.\nوَافَقَ الرَّجُلُ وَقَالَ: «مِسْمَارٌ صَغِيرٌ، لَا بَأْسَ.»\nبَعْدَ أَيَّامٍ، جَاءَ جُحَا وَعَلَّقَ عَلَى الْمِسْمَارِ ثَوْبًا قَدِيمًا.\nثُمَّ جَاءَ فِي الْغَدِ لِيَزُورَ مِسْمَارَهُ، وَجَلَسَ فِي الْبَيْتِ.\nثُمَّ جَاءَ فِي اللَّيْلِ وَنَامَ تَحْتَ مِسْمَارِهِ!\nتَعِبَ الرَّجُلُ، وَتَرَكَ الْبَيْتَ لِجُحَا.",
+    "translations": {
+      "en": {
+        "title": "Juha’s nail",
+        "text": "Juha sold his house to a man with one condition: one nail in the wall stays his. The man agreed: “A small nail, no problem.” A few days later Juha came and hung an old robe on the nail. The next day he came to visit his nail and sat in the house. Then he came at night and slept under his nail! The man grew tired and left the house to Juha.",
+        "moral": "A small excuse can become a big problem."
+      },
+      "fr": {
+        "title": "Le clou de Joha",
+        "text": "Joha vendit sa maison à un homme, à une condition : un clou dans le mur reste à lui. L'homme accepta : « Un petit clou, pas de problème. » Quelques jours plus tard, Joha vint accrocher un vieux manteau au clou. Le lendemain, il vint rendre visite à son clou et s'assit dans la maison. Puis il vint la nuit et dormit sous son clou ! L'homme, épuisé, laissa la maison à Joha.",
+        "moral": "Un petit prétexte peut devenir un grand problème."
+      },
+      "es": {
+        "title": "El clavo de Yuha",
+        "text": "Yuha vendió su casa a un hombre con una condición: un clavo de la pared seguiría siendo suyo. El hombre aceptó: «Un clavo pequeño, no pasa nada». Días después, Yuha vino y colgó una túnica vieja en el clavo. Al día siguiente vino a visitar su clavo y se sentó en la casa. ¡Luego vino de noche y durmió bajo su clavo! El hombre, cansado, le dejó la casa a Yuha.",
+        "moral": "Una pequeña excusa puede convertirse en un gran problema."
+      },
+      "pt": {
+        "title": "O prego de Juha",
+        "text": "Juha vendeu a casa a um homem com uma condição: um prego na parede continuaria sendo dele. O homem aceitou: «Um preguinho, tudo bem.» Dias depois, Juha veio e pendurou uma túnica velha no prego. No dia seguinte, veio visitar o prego e sentou-se na casa. Depois veio à noite e dormiu debaixo do prego! O homem, cansado, deixou a casa para Juha.",
+        "moral": "Uma pequena desculpa pode virar um grande problema."
+      },
+      "it": {
+        "title": "Il chiodo di Giufà",
+        "text": "Giufà vendette la casa a un uomo a una condizione: un chiodo nel muro restava suo. L'uomo accettò: «Un chiodino, va bene.» Qualche giorno dopo Giufà venne e appese al chiodo una vecchia tunica. Il giorno dopo venne a trovare il suo chiodo e si sedette in casa. Poi venne di notte e dormì sotto il suo chiodo! L'uomo, stanco, lasciò la casa a Giufà.",
+        "moral": "Una piccola scusa può diventare un grande problema."
+      },
+      "de": {
+        "title": "Dschuhas Nagel",
+        "text": "Dschuha verkaufte sein Haus unter einer Bedingung: Ein Nagel in der Wand bleibt seiner. Der Käufer stimmte zu: „Ein kleiner Nagel, kein Problem.“ Ein paar Tage später hängte Dschuha einen alten Mantel an den Nagel. Am nächsten Tag besuchte er seinen Nagel und setzte sich ins Haus. Dann kam er nachts und schlief unter seinem Nagel! Der Mann war es leid und überließ Dschuha das Haus.",
+        "moral": "Ein kleiner Vorwand kann zu einem großen Problem werden."
+      },
+      "nl": {
+        "title": "De spijker van Djoeha",
+        "text": "Djoeha verkocht zijn huis op één voorwaarde: één spijker in de muur bleef van hem. De koper stemde in: „Een klein spijkertje, geen probleem.” Een paar dagen later hing Djoeha een oude mantel aan de spijker. De volgende dag kwam hij zijn spijker bezoeken en ging in het huis zitten. Toen kwam hij ’s nachts en sliep onder zijn spijker! De man had er genoeg van en liet het huis aan Djoeha.",
+        "moral": "Een klein excuus kan een groot probleem worden."
+      },
+      "tr": {
+        "title": "Cuha'nın çivisi",
+        "text": "Cuha evini bir adama tek bir şartla sattı: duvardaki bir çivi onun kalacaktı. Adam kabul etti: “Küçük bir çivi, sorun değil.” Birkaç gün sonra Cuha gelip çiviye eski bir cübbe astı. Ertesi gün çivisini ziyarete gelip evde oturdu. Sonra gece gelip çivisinin altında uyudu! Adam bıktı ve evi Cuha'ya bıraktı.",
+        "moral": "Küçük bir bahane büyük bir soruna dönüşebilir."
+      },
+      "ru": {
+        "title": "Гвоздь Джухи",
+        "text": "Джуха продал дом одному человеку с одним условием: гвоздь в стене останется его. Человек согласился: «Маленький гвоздь — не страшно». Через несколько дней Джуха пришёл и повесил на гвоздь старый халат. На следующий день он пришёл навестить свой гвоздь и уселся в доме. А потом пришёл ночью и уснул под своим гвоздём! Хозяин устал и оставил дом Джухе.",
+        "moral": "Маленький предлог может стать большой проблемой."
+      },
+      "id": {
+        "title": "Paku Juha",
+        "text": "Juha menjual rumahnya kepada seorang laki-laki dengan satu syarat: satu paku di dinding tetap miliknya. Laki-laki itu setuju: “Paku kecil, tidak apa-apa.” Beberapa hari kemudian Juha datang dan menggantungkan jubah tua di paku itu. Besoknya ia datang menjenguk pakunya dan duduk di rumah. Lalu ia datang malam hari dan tidur di bawah pakunya! Laki-laki itu lelah dan menyerahkan rumah itu kepada Juha.",
+        "moral": "Alasan kecil bisa menjadi masalah besar."
+      },
+      "zh": {
+        "title": "朱哈的钉子",
+        "text": "朱哈把房子卖给一个人，只提了一个条件：墙上的一颗钉子仍归他所有。那人同意了：“一颗小钉子，没关系。”几天后，朱哈来把一件旧袍子挂在钉子上。第二天，他来“看望”他的钉子，在屋里坐着。后来他夜里也来，睡在钉子下面！那人受不了，把房子让给了朱哈。",
+        "moral": "一个小借口可能变成大麻烦。"
+      }
+    }
+  },
+  {
+    "title_ar": "كُلْ يَا كُمِّي",
+    "glyph": "كُمّ",
+    "image": "/img/juha3.webp",
+    "text_ar": "ذَهَبَ جُحَا إِلَى وَلِيمَةٍ بِثِيَابٍ قَدِيمَةٍ، فَلَمْ يَهْتَمَّ بِهِ أَحَدٌ.\nرَجَعَ إِلَى بَيْتِهِ، وَلَبِسَ ثِيَابًا جَدِيدَةً جَمِيلَةً.\nعَادَ إِلَى الْوَلِيمَةِ، فَرَحَّبَ بِهِ النَّاسُ وَأَجْلَسُوهُ فِي أَحْسَنِ مَكَانٍ.\nوَضَعُوا أَمَامَهُ الطَّعَامَ، فَقَرَّبَ جُحَا كُمَّهُ مِنَ الطَّعَامِ وَقَالَ: «كُلْ يَا كُمِّي، كُلْ!»\nتَعَجَّبَ النَّاسُ، فَقَالَ جُحَا: «أَنْتُمْ أَكْرَمْتُمُ الثِّيَابَ، لَا أَنَا!»",
+    "translations": {
+      "en": {
+        "title": "Eat, my sleeve!",
+        "text": "Juha went to a feast in old clothes, and nobody paid attention to him. He went home and put on beautiful new clothes. He returned to the feast; people welcomed him and seated him in the best place. They served him food, and Juha held his sleeve to the food and said: “Eat, my sleeve, eat!” People were surprised. Juha said: “You honoured the clothes, not me!”",
+        "moral": "Respect people for who they are, not for their clothes."
+      },
+      "fr": {
+        "title": "Mange, ma manche !",
+        "text": "Joha alla à un festin en vieux habits, et personne ne fit attention à lui. Il rentra chez lui et mit de beaux habits neufs. Il revint au festin : on l'accueillit et on l'installa à la meilleure place. On lui servit à manger ; Joha approcha sa manche du plat et dit : « Mange, ma manche, mange ! » Les gens s'étonnèrent. Joha dit : « C'est mes habits que vous avez honorés, pas moi ! »",
+        "moral": "Respectez les gens pour ce qu'ils sont, pas pour leurs habits."
+      },
+      "es": {
+        "title": "¡Come, manga mía!",
+        "text": "Yuha fue a un banquete con ropa vieja y nadie le hizo caso. Volvió a casa y se puso ropa nueva y bonita. Regresó al banquete: lo recibieron y lo sentaron en el mejor sitio. Le sirvieron comida y Yuha acercó su manga al plato diciendo: «¡Come, manga mía, come!». La gente se sorprendió. Yuha dijo: «¡Ustedes honraron la ropa, no a mí!».",
+        "moral": "Respeta a las personas por lo que son, no por su ropa."
+      },
+      "pt": {
+        "title": "Come, minha manga!",
+        "text": "Juha foi a um banquete com roupas velhas e ninguém lhe deu atenção. Voltou para casa e vestiu roupas novas e bonitas. Voltou ao banquete: receberam-no bem e sentaram-no no melhor lugar. Serviram-lhe comida, e Juha aproximou a manga do prato dizendo: «Come, minha manga, come!» As pessoas estranharam. Juha disse: «Vocês honraram as roupas, não a mim!»",
+        "moral": "Respeite as pessoas pelo que são, não pelas roupas."
+      },
+      "it": {
+        "title": "Mangia, manica mia!",
+        "text": "Giufà andò a un banchetto con vestiti vecchi e nessuno gli badò. Tornò a casa e indossò vestiti nuovi e belli. Tornò al banchetto: lo accolsero e lo fecero sedere al posto migliore. Gli servirono da mangiare e Giufà avvicinò la manica al piatto dicendo: «Mangia, manica mia, mangia!» La gente si stupì. Giufà disse: «Avete onorato i vestiti, non me!»",
+        "moral": "Rispetta le persone per ciò che sono, non per i vestiti."
+      },
+      "de": {
+        "title": "Iss, mein Ärmel!",
+        "text": "Dschuha ging in alten Kleidern zu einem Festmahl, und niemand beachtete ihn. Er ging nach Hause und zog schöne neue Kleider an. Als er zurückkam, begrüßte man ihn und setzte ihn auf den besten Platz. Man servierte ihm Essen, und Dschuha hielt seinen Ärmel ans Essen: „Iss, mein Ärmel, iss!“ Die Leute staunten. Dschuha sagte: „Ihr habt die Kleider geehrt, nicht mich!“",
+        "moral": "Achte Menschen für das, was sie sind, nicht für ihre Kleidung."
+      },
+      "nl": {
+        "title": "Eet, mijn mouw!",
+        "text": "Djoeha ging in oude kleren naar een feestmaal en niemand lette op hem. Hij ging naar huis en trok mooie nieuwe kleren aan. Toen hij terugkwam, werd hij hartelijk ontvangen en op de beste plek gezet. Men bracht hem eten en Djoeha hield zijn mouw bij het eten: „Eet, mijn mouw, eet!” De mensen keken verbaasd. Djoeha zei: „Jullie eerden mijn kleren, niet mij!”",
+        "moral": "Respecteer mensen om wie ze zijn, niet om hun kleren."
+      },
+      "tr": {
+        "title": "Ye kürküm ye!",
+        "text": "Cuha bir ziyafete eski elbiselerle gitti ve kimse ona ilgi göstermedi. Eve dönüp güzel, yeni elbiseler giydi. Ziyafete geri döndüğünde onu karşıladılar ve en iyi yere oturttular. Önüne yemek koydular; Cuha kürkünün yenini yemeğe yaklaştırıp dedi ki: “Ye kürküm, ye!” İnsanlar şaşırdı. Cuha dedi ki: “Siz bana değil, elbiselerime ikram ettiniz!”",
+        "moral": "İnsanlara kıyafetlerine göre değil, kim olduklarına göre değer verin."
+      },
+      "ru": {
+        "title": "Ешь, мой рукав!",
+        "text": "Джуха пришёл на пир в старой одежде, и никто не обратил на него внимания. Он вернулся домой и надел красивую новую одежду. Когда он вернулся, его встретили и усадили на лучшее место. Ему подали еду, а Джуха поднёс рукав к блюду и сказал: «Ешь, мой рукав, ешь!» Люди удивились. Джуха сказал: «Вы почтили одежду, а не меня!»",
+        "moral": "Уважайте людей за то, кто они, а не за их одежду."
+      },
+      "id": {
+        "title": "Makanlah, wahai lengan bajuku!",
+        "text": "Juha datang ke jamuan dengan pakaian lusuh, dan tidak ada yang memedulikannya. Ia pulang dan memakai pakaian baru yang indah. Ia kembali ke jamuan; orang-orang menyambutnya dan mendudukkannya di tempat terbaik. Mereka menghidangkan makanan, lalu Juha mendekatkan lengan bajunya ke makanan sambil berkata: “Makanlah, lengan bajuku, makanlah!” Orang-orang heran. Juha berkata: “Kalian memuliakan pakaianku, bukan aku!”",
+        "moral": "Hargailah orang karena dirinya, bukan karena pakaiannya."
+      },
+      "zh": {
+        "title": "吃吧，我的袖子！",
+        "text": "朱哈穿着旧衣服去赴宴，没有人理他。他回家换上漂亮的新衣服。再回到宴会时，人们热情欢迎他，请他坐在最好的位置。饭菜端上来，朱哈把袖子凑近饭菜说：“吃吧，我的袖子，吃吧！”大家很惊讶。朱哈说：“你们尊重的是衣服，不是我！”",
+        "moral": "尊重一个人要看他本人，而不是他的衣服。"
+      }
+    }
+  },
+  {
+    "title_ar": "جُحَا وَالْقِدْرُ",
+    "glyph": "قِدْر",
+    "image": "/img/juha4.webp",
+    "text_ar": "اسْتَعَارَ جُحَا قِدْرًا مِنْ جَارِهِ.\nبَعْدَ أَيَّامٍ، رَدَّ الْقِدْرَ وَمَعَهَا قِدْرٌ صَغِيرَةٌ.\nسَأَلَ الْجَارُ: «مَا هَذِهِ؟» قَالَ جُحَا: «قِدْرُكَ وَلَدَتْ!» فَفَرِحَ الْجَارُ وَأَخَذَ الْقِدْرَيْنِ.\nبَعْدَ مُدَّةٍ، اسْتَعَارَ جُحَا الْقِدْرَ مَرَّةً أُخْرَى، وَلَمْ يَرُدَّهَا.\nجَاءَ الْجَارُ يَسْأَلُ عَنْهَا، فَقَالَ جُحَا: «قِدْرُكَ مَاتَتْ!»\nقَالَ الْجَارُ: «وَهَلْ تَمُوتُ الْقِدْرُ؟» قَالَ جُحَا: «صَدَّقْتَ أَنَّهَا تَلِدُ، فَلِمَاذَا لَا تُصَدِّقُ أَنَّهَا تَمُوتُ؟»",
+    "translations": {
+      "en": {
+        "title": "Juha and the pot",
+        "text": "Juha borrowed a cooking pot from his neighbour. A few days later he returned it with a small pot inside. “What is this?” asked the neighbour. “Your pot gave birth!” said Juha. The neighbour was delighted and took both pots. Later, Juha borrowed the pot again and did not return it. When the neighbour came asking, Juha said: “Your pot died!” “Can a pot die?” cried the neighbour. Juha replied: “You believed it could give birth, so why not believe it can die?”",
+        "moral": "If you accept a lie when it helps you, you must accept it when it doesn’t."
+      },
+      "fr": {
+        "title": "Joha et la marmite",
+        "text": "Joha emprunta une marmite à son voisin. Quelques jours plus tard, il la rendit avec une petite marmite dedans. « Qu'est-ce que c'est ? » demanda le voisin. « Ta marmite a accouché ! » dit Joha. Le voisin, ravi, prit les deux marmites. Plus tard, Joha emprunta de nouveau la marmite et ne la rendit pas. Quand le voisin vint la réclamer, Joha dit : « Ta marmite est morte ! » « Une marmite peut mourir ? » s'écria le voisin. Joha répondit : « Tu as cru qu'elle pouvait accoucher, pourquoi ne crois-tu pas qu'elle peut mourir ? »",
+        "moral": "Si l'on accepte un mensonge quand il nous arrange, il faut l'accepter aussi quand il nous dérange."
+      },
+      "es": {
+        "title": "Yuha y la olla",
+        "text": "Yuha le pidió prestada una olla a su vecino. Días después se la devolvió con una ollita dentro. «¿Qué es esto?», preguntó el vecino. «¡Tu olla ha dado a luz!», dijo Yuha. El vecino, encantado, se quedó con las dos ollas. Más tarde, Yuha volvió a pedir la olla y no la devolvió. Cuando el vecino fue a reclamarla, Yuha dijo: «¡Tu olla se ha muerto!». «¿Una olla puede morir?», gritó el vecino. Yuha respondió: «Creíste que podía dar a luz, ¿por qué no crees que puede morir?».",
+        "moral": "Si aceptas una mentira cuando te conviene, debes aceptarla también cuando no."
+      },
+      "pt": {
+        "title": "Juha e a panela",
+        "text": "Juha pediu uma panela emprestada ao vizinho. Dias depois, devolveu-a com uma panelinha dentro. «O que é isto?», perguntou o vizinho. «A sua panela deu à luz!», disse Juha. O vizinho, feliz, ficou com as duas. Mais tarde, Juha pediu a panela outra vez e não a devolveu. Quando o vizinho foi buscá-la, Juha disse: «A sua panela morreu!» «Panela morre?», gritou o vizinho. Juha respondeu: «Você acreditou que ela podia dar à luz; por que não acredita que pode morrer?»",
+        "moral": "Se você aceita uma mentira quando ela o ajuda, tem de aceitá-la também quando não ajuda."
+      },
+      "it": {
+        "title": "Giufà e la pentola",
+        "text": "Giufà prese in prestito una pentola dal vicino. Dopo qualche giorno la restituì con dentro una pentolina. «Che cos'è?» chiese il vicino. «La tua pentola ha partorito!» disse Giufà. Il vicino, contento, si prese le due pentole. Più tardi Giufà chiese di nuovo la pentola e non la restituì. Quando il vicino venne a chiederla, Giufà disse: «La tua pentola è morta!» «Una pentola può morire?» gridò il vicino. Giufà rispose: «Hai creduto che potesse partorire, perché non credi che possa morire?»",
+        "moral": "Se accetti una bugia quando ti conviene, devi accettarla anche quando non ti conviene."
+      },
+      "de": {
+        "title": "Dschuha und der Kochtopf",
+        "text": "Dschuha lieh sich vom Nachbarn einen Kochtopf. Ein paar Tage später gab er ihn zurück – mit einem kleinen Topf darin. „Was ist das?“, fragte der Nachbar. „Dein Topf hat ein Kind bekommen!“, sagte Dschuha. Der Nachbar freute sich und nahm beide Töpfe. Später lieh Dschuha den Topf wieder und gab ihn nicht zurück. Als der Nachbar danach fragte, sagte Dschuha: „Dein Topf ist gestorben!“ „Ein Topf kann sterben?“, rief der Nachbar. Dschuha antwortete: „Du hast geglaubt, dass er Kinder bekommt – warum glaubst du nicht, dass er sterben kann?“",
+        "moral": "Wer eine Lüge annimmt, wenn sie ihm nützt, muss sie auch annehmen, wenn sie ihm schadet."
+      },
+      "nl": {
+        "title": "Djoeha en de kookpot",
+        "text": "Djoeha leende een kookpot van zijn buurman. Een paar dagen later bracht hij hem terug met een klein potje erin. „Wat is dit?” vroeg de buurman. „Je pot heeft een kindje gekregen!” zei Djoeha. De buurman was blij en nam beide potten. Later leende Djoeha de pot opnieuw en bracht hem niet terug. Toen de buurman ernaar vroeg, zei Djoeha: „Je pot is gestorven!” „Kan een pot sterven?” riep de buurman. Djoeha antwoordde: „Je geloofde dat hij een kind kon krijgen, waarom geloof je dan niet dat hij kan sterven?”",
+        "moral": "Wie een leugen aanneemt als die hem uitkomt, moet hem ook aannemen als die hem niet uitkomt."
+      },
+      "tr": {
+        "title": "Cuha ve tencere",
+        "text": "Cuha komşusundan bir tencere ödünç aldı. Birkaç gün sonra tencereyi içinde küçük bir tencereyle geri getirdi. “Bu ne?” diye sordu komşu. “Tenceren doğurdu!” dedi Cuha. Komşu sevindi ve iki tencereyi de aldı. Bir süre sonra Cuha tencereyi yine ödünç aldı ve geri getirmedi. Komşu sormaya gelince Cuha dedi ki: “Tenceren öldü!” “Tencere ölür mü?” diye bağırdı komşu. Cuha cevap verdi: “Doğurduğuna inandın da öldüğüne neden inanmıyorsun?”",
+        "moral": "İşine gelen yalana inanıyorsan, işine gelmeyene de inanmalısın."
+      },
+      "ru": {
+        "title": "Джуха и котёл",
+        "text": "Джуха одолжил у соседа котёл. Через несколько дней он вернул его, а внутри лежал маленький котелок. «Что это?» — спросил сосед. «Твой котёл родил!» — сказал Джуха. Сосед обрадовался и забрал оба. Позже Джуха снова одолжил котёл и не вернул. Когда сосед пришёл за ним, Джуха сказал: «Твой котёл умер!» «Разве котёл может умереть?» — закричал сосед. Джуха ответил: «Ты поверил, что он может родить, почему же не веришь, что он может умереть?»",
+        "moral": "Если веришь лжи, когда она тебе выгодна, верь ей и тогда, когда она невыгодна."
+      },
+      "id": {
+        "title": "Juha dan panci",
+        "text": "Juha meminjam panci dari tetangganya. Beberapa hari kemudian ia mengembalikannya dengan sebuah panci kecil di dalamnya. “Apa ini?” tanya tetangganya. “Pancimu melahirkan!” kata Juha. Tetangganya senang dan mengambil kedua panci itu. Kemudian Juha meminjam panci itu lagi dan tidak mengembalikannya. Ketika tetangganya datang menanyakan, Juha berkata: “Pancimu mati!” “Memangnya panci bisa mati?” teriak tetangganya. Juha menjawab: “Kamu percaya panci bisa melahirkan, kenapa tidak percaya panci bisa mati?”",
+        "moral": "Jika kamu menerima kebohongan saat menguntungkanmu, kamu juga harus menerimanya saat merugikanmu."
+      },
+      "zh": {
+        "title": "朱哈和锅",
+        "text": "朱哈向邻居借了一口锅。几天后，他把锅还回去，里面还放着一口小锅。邻居问：“这是什么？”朱哈说：“你的锅生孩子了！”邻居很高兴，把两口锅都收下了。后来，朱哈又借了那口锅，却没有还。邻居来问，朱哈说：“你的锅死了！”邻居叫道：“锅也会死吗？”朱哈回答：“你相信它会生孩子，为什么不相信它会死呢？”",
+        "moral": "对自己有利的谎话你相信，对自己不利的也得相信。"
+      }
+    }
+  },
+  {
+    "title_ar": "جُحَا يَعُدُّ حَمِيرَهُ",
+    "glyph": "١٠",
+    "image": "/img/juha5.webp",
+    "text_ar": "كَانَ عِنْدَ جُحَا عَشَرَةُ حَمِيرٍ.\nرَكِبَ وَاحِدًا مِنْهَا، وَمَشَتِ الْبَاقِيَةُ أَمَامَهُ.\nعَدَّهَا فِي الطَّرِيقِ: «وَاحِدٌ، اثْنَانِ ... تِسْعَةٌ!» فَخَافَ وَنَزَلَ يَبْحَثُ.\nنَزَلَ وَعَدَّهَا: «... عَشَرَةٌ!» فَفَرِحَ وَرَكِبَ.\nعَدَّهَا مَرَّةً أُخْرَى وَهُوَ رَاكِبٌ: «تِسْعَةٌ!»\nفَقَالَ جُحَا: «أَمْشِي وَمَعِي عَشَرَةُ حَمِيرٍ، خَيْرٌ مِنْ أَنْ أَرْكَبَ وَأَخْسَرَ حِمَارًا!» وَمَشَى عَلَى رِجْلَيْهِ.",
+    "translations": {
+      "en": {
+        "title": "Juha counts his donkeys",
+        "text": "Juha had ten donkeys. He rode one and the others walked in front of him. On the way he counted them: “One, two… nine!” Worried, he got down to look for the missing one. Standing on the ground he counted again: “…ten!” Happy, he climbed back on. Riding, he counted once more: “Nine!” So Juha said: “Better to walk with ten donkeys than ride and lose one!” and he walked the rest of the way.",
+        "moral": "Don’t forget to count yourself."
+      },
+      "fr": {
+        "title": "Joha compte ses ânes",
+        "text": "Joha avait dix ânes. Il monta sur l'un d'eux et les autres marchaient devant lui. En chemin, il les compta : « Un, deux… neuf ! » Inquiet, il descendit chercher l'âne perdu. À pied, il recompta : « …dix ! » Content, il remonta. Une fois sur l'âne, il compta encore : « Neuf ! » Alors Joha dit : « Mieux vaut marcher avec dix ânes que monter et en perdre un ! » et il fit le reste du chemin à pied.",
+        "moral": "N'oublie pas de te compter toi-même."
+      },
+      "es": {
+        "title": "Yuha cuenta sus burros",
+        "text": "Yuha tenía diez burros. Montó en uno y los demás caminaban delante. Por el camino los contó: «Uno, dos… ¡nueve!». Preocupado, bajó a buscar el que faltaba. Desde el suelo volvió a contar: «…¡diez!». Contento, volvió a montar. Ya montado, contó otra vez: «¡Nueve!». Entonces Yuha dijo: «¡Mejor caminar con diez burros que montar y perder uno!», y siguió a pie.",
+        "moral": "No olvides contarte a ti mismo."
+      },
+      "pt": {
+        "title": "Juha conta os burros",
+        "text": "Juha tinha dez burros. Montou num deles e os outros andavam à frente. No caminho, contou-os: «Um, dois… nove!» Preocupado, desceu para procurar o que faltava. No chão, contou de novo: «…dez!» Contente, montou outra vez. Montado, contou mais uma vez: «Nove!» Então Juha disse: «Melhor andar a pé com dez burros do que montar e perder um!» E seguiu a pé.",
+        "moral": "Não se esqueça de contar a si mesmo."
+      },
+      "it": {
+        "title": "Giufà conta i suoi asini",
+        "text": "Giufà aveva dieci asini. Salì su uno e gli altri camminavano davanti. Per strada li contò: «Uno, due… nove!» Preoccupato, scese a cercare quello mancante. A terra li ricontò: «…dieci!» Contento, risalì. In sella, contò ancora: «Nove!» Allora Giufà disse: «Meglio camminare con dieci asini che andare in sella e perderne uno!» e proseguì a piedi.",
+        "moral": "Non dimenticare di contare te stesso."
+      },
+      "de": {
+        "title": "Dschuha zählt seine Esel",
+        "text": "Dschuha hatte zehn Esel. Er ritt auf einem, die anderen liefen vor ihm her. Unterwegs zählte er: „Eins, zwei … neun!“ Erschrocken stieg er ab, um den fehlenden zu suchen. Am Boden zählte er wieder: „… zehn!“ Froh stieg er auf. Im Sattel zählte er noch einmal: „Neun!“ Da sagte Dschuha: „Lieber laufe ich mit zehn Eseln, als zu reiten und einen zu verlieren!“ und ging zu Fuß weiter.",
+        "moral": "Vergiss nicht, dich selbst mitzuzählen."
+      },
+      "nl": {
+        "title": "Djoeha telt zijn ezels",
+        "text": "Djoeha had tien ezels. Hij reed op één ervan en de andere liepen voor hem uit. Onderweg telde hij ze: „Eén, twee… negen!” Ongerust stapte hij af om de ontbrekende te zoeken. Op de grond telde hij opnieuw: „…tien!” Blij stapte hij weer op. Op de ezel telde hij nog eens: „Negen!” Toen zei Djoeha: „Liever lopen met tien ezels dan rijden en er één kwijtraken!” en hij liep verder.",
+        "moral": "Vergeet niet jezelf mee te tellen."
+      },
+      "tr": {
+        "title": "Cuha eşeklerini sayıyor",
+        "text": "Cuha'nın on eşeği vardı. Birine bindi, diğerleri önünden yürüdü. Yolda saydı: “Bir, iki… dokuz!” Korkup kayıp eşeği aramak için indi. Yerde yeniden saydı: “…on!” Sevinip tekrar bindi. Binince bir daha saydı: “Dokuz!” Bunun üzerine Cuha dedi ki: “On eşekle yürümek, binip bir eşek kaybetmekten iyidir!” ve yolun geri kalanını yürüdü.",
+        "moral": "Kendini saymayı unutma."
+      },
+      "ru": {
+        "title": "Джуха считает ослов",
+        "text": "У Джухи было десять ослов. Он сел на одного, а остальные шли впереди. По дороге он пересчитал их: «Один, два… девять!» Испугавшись, он слез искать пропавшего. Стоя на земле, он снова посчитал: «…десять!» Обрадовался и опять сел верхом. Сидя на осле, посчитал ещё раз: «Девять!» Тогда Джуха сказал: «Лучше идти пешком с десятью ослами, чем ехать и потерять одного!» — и пошёл пешком.",
+        "moral": "Не забывай посчитать самого себя."
+      },
+      "id": {
+        "title": "Juha menghitung keledainya",
+        "text": "Juha punya sepuluh keledai. Ia menunggangi satu, dan yang lain berjalan di depannya. Di jalan ia menghitung: “Satu, dua… sembilan!” Ia cemas lalu turun mencari yang hilang. Di tanah ia menghitung lagi: “…sepuluh!” Ia senang dan naik kembali. Sambil menunggang ia menghitung sekali lagi: “Sembilan!” Juha pun berkata: “Lebih baik berjalan dengan sepuluh keledai daripada menunggang dan kehilangan satu!” Lalu ia berjalan kaki.",
+        "moral": "Jangan lupa menghitung dirimu sendiri."
+      },
+      "zh": {
+        "title": "朱哈数驴",
+        "text": "朱哈有十头驴。他骑着一头，其余的在前面走。路上他数了数：“一、二……九！”他慌了，下来找丢的那头。站在地上再数：“……十！”他高兴地又骑上去。骑在驴上再数一遍：“九！”于是朱哈说：“走路带着十头驴，总比骑驴丢一头好！”他就一路走着回去了。",
+        "moral": "别忘了把自己也算进去。"
+      }
+    }
+  },
+  {
+    "title_ar": "أَيْنَ الْخَاتَمُ؟",
+    "glyph": "خَاتَم",
+    "image": "/img/juha6.webp",
+    "text_ar": "أَضَاعَ جُحَا خَاتَمَهُ فِي الْبَيْتِ.\nخَرَجَ إِلَى الشَّارِعِ، وَأَخَذَ يَبْحَثُ عَنْهُ تَحْتَ الْمِصْبَاحِ.\nسَأَلَهُ جَارُهُ: «أَيْنَ أَضَعْتَ الْخَاتَمَ؟» قَالَ جُحَا: «فِي الْبَيْتِ.»\nقَالَ الْجَارُ: «فَلِمَاذَا تَبْحَثُ عَنْهُ هُنَا؟»\nقَالَ جُحَا: «لِأَنَّ الْبَيْتَ مُظْلِمٌ، وَهُنَا ضَوْءٌ!»",
+    "translations": {
+      "en": {
+        "title": "Where is the ring?",
+        "text": "Juha lost his ring inside his house. He went out into the street and started looking for it under the lamp. His neighbour asked: “Where did you lose your ring?” “In the house,” said Juha. “Then why are you looking for it here?” Juha answered: “Because the house is dark, and here there is light!”",
+        "moral": "Look for the answer where the problem is, not where it is easy."
+      },
+      "fr": {
+        "title": "Où est la bague ?",
+        "text": "Joha perdit sa bague dans sa maison. Il sortit dans la rue et se mit à la chercher sous le lampadaire. Son voisin lui demanda : « Où as-tu perdu ta bague ? » « Dans la maison », dit Joha. « Alors pourquoi la cherches-tu ici ? » Joha répondit : « Parce que la maison est sombre, et ici il y a de la lumière ! »",
+        "moral": "Cherche la solution là où est le problème, pas là où c'est facile."
+      },
+      "es": {
+        "title": "¿Dónde está el anillo?",
+        "text": "Yuha perdió su anillo dentro de casa. Salió a la calle y se puso a buscarlo bajo la farola. Su vecino le preguntó: «¿Dónde perdiste el anillo?». «En casa», dijo Yuha. «¿Y por qué lo buscas aquí?». Yuha respondió: «¡Porque la casa está oscura y aquí hay luz!».",
+        "moral": "Busca la solución donde está el problema, no donde es más fácil."
+      },
+      "pt": {
+        "title": "Onde está o anel?",
+        "text": "Juha perdeu o anel dentro de casa. Saiu à rua e pôs-se a procurá-lo debaixo do poste de luz. O vizinho perguntou: «Onde você perdeu o anel?» «Em casa», disse Juha. «Então por que procura aqui?» Juha respondeu: «Porque a casa está escura e aqui há luz!»",
+        "moral": "Procure a solução onde está o problema, não onde é mais fácil."
+      },
+      "it": {
+        "title": "Dov'è l'anello?",
+        "text": "Giufà perse l'anello dentro casa. Uscì in strada e cominciò a cercarlo sotto il lampione. Il vicino gli chiese: «Dove hai perso l'anello?» «In casa», disse Giufà. «E allora perché lo cerchi qui?» Giufà rispose: «Perché in casa è buio e qui c'è luce!»",
+        "moral": "Cerca la soluzione dove sta il problema, non dove è più facile."
+      },
+      "de": {
+        "title": "Wo ist der Ring?",
+        "text": "Dschuha verlor seinen Ring im Haus. Er ging auf die Straße und suchte ihn unter der Laterne. Der Nachbar fragte: „Wo hast du den Ring verloren?“ „Im Haus“, sagte Dschuha. „Warum suchst du ihn dann hier?“ Dschuha antwortete: „Weil es im Haus dunkel ist und hier Licht!“",
+        "moral": "Such die Lösung dort, wo das Problem ist, nicht dort, wo es bequem ist."
+      },
+      "nl": {
+        "title": "Waar is de ring?",
+        "text": "Djoeha verloor zijn ring in huis. Hij ging de straat op en zocht hem onder de lantaarn. Zijn buurman vroeg: „Waar ben je je ring kwijtgeraakt?” „In huis”, zei Djoeha. „Waarom zoek je hem dan hier?” Djoeha antwoordde: „Omdat het in huis donker is, en hier is licht!”",
+        "moral": "Zoek de oplossing waar het probleem is, niet waar het makkelijk is."
+      },
+      "tr": {
+        "title": "Yüzük nerede?",
+        "text": "Cuha yüzüğünü evde kaybetti. Sokağa çıkıp lambanın altında aramaya başladı. Komşusu sordu: “Yüzüğünü nerede kaybettin?” “Evde,” dedi Cuha. “O zaman neden burada arıyorsun?” Cuha cevap verdi: “Çünkü ev karanlık, burada ışık var!”",
+        "moral": "Çözümü kolay olan yerde değil, sorunun olduğu yerde ara."
+      },
+      "ru": {
+        "title": "Где кольцо?",
+        "text": "Джуха потерял кольцо у себя дома. Он вышел на улицу и стал искать его под фонарём. Сосед спросил: «Где ты потерял кольцо?» «Дома», — ответил Джуха. «Тогда почему ищешь здесь?» Джуха сказал: «Потому что дома темно, а здесь светло!»",
+        "moral": "Ищи решение там, где проблема, а не там, где легче."
+      },
+      "id": {
+        "title": "Di mana cincinnya?",
+        "text": "Juha kehilangan cincinnya di dalam rumah. Ia keluar ke jalan dan mencarinya di bawah lampu jalan. Tetangganya bertanya: “Di mana kamu kehilangan cincinmu?” “Di dalam rumah,” jawab Juha. “Lalu kenapa mencarinya di sini?” Juha menjawab: “Karena rumahku gelap, dan di sini terang!”",
+        "moral": "Carilah jawaban di tempat masalahnya, bukan di tempat yang mudah."
+      },
+      "zh": {
+        "title": "戒指在哪儿？",
+        "text": "朱哈在家里丢了戒指。他走到街上，在路灯下找起来。邻居问：“你的戒指丢在哪儿了？”朱哈说：“在家里。”“那你为什么在这儿找？”朱哈回答：“因为家里黑，这里有光！”",
+        "moral": "要在问题所在的地方找答案，而不是在容易的地方找。"
+      }
+    }
+  }
+]

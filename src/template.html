@@ -1,0 +1,719 @@
+<title>Arabic Orbit</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Learn Arabic from zero: free video lessons, free sample pages and printable Arabic workbooks in 11 languages.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&family=Inter:wght@400;500;600&family=Amiri:wght@400;700&display=swap">
+<style>
+/* Layout: one bright, sunny theme (always light): mint and coral; open-book hero, then letters, videos, editions, free pages */
+:root{
+  --bg:#f6fcf9; --surface:#ffffff; --ink:#0b3d31; --muted:#4f6b62; --line:#d4ece2;
+  --navy:#c9f0e0; --gold:#ff6f61; --gold-soft:#ffe7e4; --on-navy:#0b3d31; --teal:#12a37f; color-scheme:light;
+  --f-display:"Lexend",system-ui,sans-serif; --f-body:"Inter",system-ui,sans-serif; --f-ar:"Amiri","Noto Naskh Arabic","Traditional Arabic",serif;
+}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.6}
+.wrap{max-width:1080px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--f-display);line-height:1.2;text-wrap:balance;margin:0}
+h2{font-size:clamp(1.5rem,3vw,2rem)}
+a{color:inherit}
+.eyebrow{font-family:var(--f-display);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:600}
+section{padding-block:56px}
+.lead{color:var(--muted);max-width:60ch;margin:.5rem 0 0}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.75rem 1.2rem;border-radius:999px;font-weight:600;text-decoration:none;font-family:var(--f-display);font-size:.95rem;border:2px solid transparent;transition:transform .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn:focus-visible,button:focus-visible,a:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.btn-gold{background:var(--gold);color:#fff;box-shadow:0 6px 0 -2px #d94e41}
+.btn-ghost{border-color:currentColor}
+
+/* header */
+header.top{background:var(--navy);color:var(--on-navy);position:sticky;top:env(safe-area-inset-top,0px);z-index:5}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--navy)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:12px}
+.brand{display:flex;align-items:center;gap:.6rem;text-decoration:none;font-family:var(--f-display);font-weight:700;font-size:1.05rem}
+.brand .mark{width:46px;height:44px;background:#fff;border-radius:12px;padding:3px;flex:none}
+.brand b{color:var(--gold)}
+.nav ul{display:flex;gap:1.2rem;list-style:none;margin:0;padding:0;font-size:.9rem}
+.nav ul a{text-decoration:none;opacity:.85}.nav ul a:hover{opacity:1;color:var(--gold)}
+@media (max-width:720px){.nav ul{display:none}}
+
+/* hero */
+.hero{background:linear-gradient(160deg,#c9f0e0 0%,#effbf6 100%);color:var(--on-navy);padding-block:56px 72px;position:relative;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
+.hero h1{font-size:clamp(2rem,5vw,3.3rem)}
+.hero h1 span{color:var(--gold)}
+.hero p{color:color-mix(in srgb,var(--on-navy) 80%,transparent);max-width:52ch;font-size:1.08rem}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.5rem}
+.hero .facts{display:flex;flex-wrap:wrap;gap:1.5rem;margin-top:2rem;font-size:.9rem}
+.hero .facts strong{display:block;font-family:var(--f-display);font-size:1.5rem;color:var(--gold)}
+.book{aspect-ratio:3/4;max-width:100%;width:280px;justify-self:center;border-radius:6px 14px 14px 6px;background:linear-gradient(135deg,#1fbf95,#0e8a6b);border:0;box-shadow:16px 20px 0 -6px rgba(255,111,97,.6),0 24px 40px rgba(31,42,68,.18);padding:28px 24px;display:flex;flex-direction:column;justify-content:space-between;color:#ffffff;position:relative}
+.book::before{content:"";position:absolute;left:12px;top:0;bottom:0;width:2px;background:rgba(255,255,255,.5)}
+.book .ar{font-family:var(--f-ar);font-size:4.2rem;color:#ffd3cc;text-align:center;line-height:1.3;direction:rtl}
+.book .t{font-family:var(--f-display);font-weight:700;font-size:1.25rem}
+.book .s{font-size:.8rem;opacity:.75}
+@media (max-width:820px){.hero-grid{grid-template-columns:1fr}.book{width:220px}}
+
+/* letters */
+.alpha-wrap{display:grid;grid-template-columns:1fr 300px;gap:28px;margin-top:28px;align-items:start}
+@media (max-width:820px){.alpha-wrap{grid-template-columns:1fr}}
+.alpha{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;direction:rtl}
+@media (max-width:480px){.alpha{grid-template-columns:repeat(5,1fr)}}
+.alpha button{font-family:var(--f-ar);font-size:1.9rem;background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:10px;aspect-ratio:1;cursor:pointer;line-height:1;transition:background .15s,border-color .15s}
+.alpha button:hover{border-color:var(--gold)}
+.alpha button:nth-child(4n+1){background:#e3f7ef}.alpha button:nth-child(4n+2){background:#ffe7e4}.alpha button:nth-child(4n+3){background:#eefaf5}.alpha button:nth-child(4n){background:#fff0ec}
+.alpha button[aria-pressed="true"]{background:var(--gold);color:#fff;border-color:var(--gold)}
+.detail{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px}
+.detail .big{font-family:var(--f-ar);font-size:5rem;text-align:center;line-height:1.3;color:var(--gold)}
+.detail .name{text-align:center;font-family:var(--f-display);font-weight:600;font-size:1.2rem}
+.detail .sound{text-align:center;color:var(--muted);font-size:.9rem}
+.forms{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:16px;direction:rtl}
+.forms div{text-align:center;border-top:1px solid var(--line);padding-top:8px}
+.forms .g{font-family:var(--f-ar);font-size:2rem;line-height:1.4}
+.forms small{display:block;direction:ltr;color:var(--muted);font-size:.7rem;text-transform:uppercase;letter-spacing:.06em}
+button.big{display:block;width:100%;background:none;border:0;cursor:pointer;color:var(--gold);font-family:var(--f-ar)}
+.say-name{display:flex;align-items:center;justify-content:center;gap:8px;margin:12px auto 0;font:600 .9rem var(--f-display);color:#fff;background:var(--teal);border:0;border-radius:999px;padding:.55rem 1.1rem;cursor:pointer}
+.say-name .ar{font-family:var(--f-ar);font-size:1.15rem;line-height:1}
+.snd{display:flex;flex-direction:column;gap:12px;margin-top:16px}
+.snd h4{margin:0 0 6px;font:600 .72rem var(--f-display);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-align:center}
+.snd .row3{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;direction:rtl}
+.snd button{display:flex;flex-direction:column;align-items:center;gap:0;background:var(--gold-soft);border:2px solid transparent;border-radius:10px;padding:4px 2px 6px;cursor:pointer;color:var(--ink)}
+.snd button:nth-child(2){background:#e3f7ef}.snd button:nth-child(3){background:#eef0ff}
+.snd button .g{font-family:var(--f-ar);font-size:1.9rem;line-height:1.5}
+.snd button small{direction:ltr;font-size:.72rem;color:var(--muted)}
+.snd button:hover{border-color:var(--teal)}
+.playing{animation:pop .5s ease}
+@keyframes pop{50%{transform:scale(1.12)}}
+@media (prefers-reduced-motion:reduce){.playing{animation:none}}
+.novoice{font-size:.8rem;color:var(--muted);text-align:center;margin:10px 0 0}
+.vowel-key{text-align:center;font-size:.75rem;color:var(--muted);margin-top:4px}
+
+/* videos */
+.alt{background:var(--surface);border-block:1px solid var(--line)}
+.vids{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;margin-top:28px}
+.vid{text-decoration:none;display:flex;flex-direction:column;gap:10px}
+.thumb{aspect-ratio:16/9;max-width:100%;border-radius:12px;background:linear-gradient(135deg,#1fbf95,#0e8a6b);display:grid;place-items:center;position:relative;overflow:hidden}
+.thumb .ar{font-family:var(--f-ar);font-size:3rem;color:#fff;direction:rtl}
+.thumb .play{position:absolute;right:10px;bottom:10px;width:38px;height:38px;border-radius:50%;background:var(--gold);display:grid;place-items:center}
+.thumb .dur{position:absolute;left:10px;top:10px;font-size:.72rem;background:rgba(0,0,0,.55);color:#fff;padding:2px 8px;border-radius:999px}
+.vid h3{font-size:1.02rem}
+.vid p{margin:0;color:var(--muted);font-size:.88rem}
+.vid:hover h3{color:var(--gold)}
+
+/* editions */
+.picker{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:20px;font-size:.88rem;color:var(--muted)}
+.picker a{padding:.35rem .8rem;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);text-decoration:none}
+.picker a:hover{border-color:var(--teal)}
+.eds{margin-top:24px}
+.feat{display:grid;grid-template-columns:200px minmax(0,1fr);gap:28px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:24px}
+.feat .mini{aspect-ratio:3/4;max-width:100%;border-radius:6px 12px 12px 6px;background:linear-gradient(135deg,#1fbf95,#0e8a6b);color:#fff;display:flex;flex-direction:column;justify-content:space-between;padding:16px;box-shadow:10px 12px 0 -4px rgba(255,111,97,.55)}
+.feat .mini .ar{font-family:var(--f-ar);font-size:4rem;text-align:center;line-height:1.4}
+.feat .mini b{font-family:var(--f-display);font-size:1rem}.feat .mini small{opacity:.85;font-size:.75rem}
+.fbody{display:flex;flex-direction:column;gap:8px;min-width:0}
+.fbody .code{font-family:var(--f-display);font-weight:700;font-size:.8rem;letter-spacing:.08em;color:var(--teal)}
+.fbody h3{font-size:1.5rem}.fbody .meta{color:var(--muted);margin:0}
+.fbody .price{font-family:var(--f-display);font-weight:700;font-size:1.6rem;color:var(--gold)}
+.fbody .row{display:flex;gap:10px;flex-wrap:wrap}.fbody .btn-ghost{color:var(--ink)}
+@media (max-width:600px){.feat{grid-template-columns:1fr}.feat .mini{width:170px;margin:0 auto}}
+.soon{grid-column:1/-1;background:var(--surface);border:2px dashed var(--teal);border-radius:14px;padding:28px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:8px}
+.soon .ar{font-family:var(--f-ar);font-size:2.4rem;color:var(--teal);line-height:1.3}.soon p{margin:0;font-weight:600}.soon .btn-ghost{color:var(--ink);margin-top:6px}
+.fr-wide{grid-column:1/-1;flex-direction:row;align-items:center;gap:22px}.fr-wide .ar{font-size:3rem}
+.ed{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:10px}
+.ed-head{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.ed .code{font-family:var(--f-display);font-weight:700;font-size:.8rem;letter-spacing:.08em;color:var(--gold)}
+.ed .price{font-family:var(--f-display);font-weight:700;font-variant-numeric:tabular-nums}
+.ed h3{font-size:1.1rem}
+.ed .meta{color:var(--muted);font-size:.85rem;margin:0}
+.ed .row{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto}
+.ed .row .btn{padding:.55rem .95rem;font-size:.85rem}
+.ed .btn-ghost{color:var(--ink)}
+
+.stories{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:20px;margin-top:28px}
+.story{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.st-img{margin:-22px -22px 0;overflow:hidden;border-radius:18px 18px 0 0;border-bottom:1px solid var(--line)}.st-ph{aspect-ratio:4/5;display:grid;place-items:center;background:radial-gradient(circle at 30% 25%,#ffe7e4 0,transparent 45%),radial-gradient(circle at 75% 80%,#c9f0e0 0,transparent 50%),#f6fcf9}.st-ph span{font-family:var(--f-ar);font-size:4.5rem;color:var(--teal);line-height:1.4}
+.st-img img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 20%}
+.st-head{display:flex;flex-direction:column;align-items:center;text-align:center;gap:2px;padding-bottom:12px;border-bottom:1px dashed var(--line)}
+.st-num{font:600 .72rem var(--f-display);letter-spacing:.1em;text-transform:uppercase;color:var(--gold)}
+.st-ar{font-family:var(--f-ar);font-size:2rem;color:var(--teal);line-height:1.5;font-weight:700}
+.st-title{margin:0;color:var(--muted);font-size:.92rem}
+.st-text{font-family:var(--f-ar);font-size:1.35rem;line-height:2.1;color:var(--ink)}
+.st-text p{margin:0 0 .35rem}
+.st-tog{align-self:flex-start;font:600 .85rem var(--f-display);color:var(--teal);background:transparent;border:2px solid var(--teal);border-radius:999px;padding:.45rem 1rem;cursor:pointer}
+.st-tr{background:var(--bg);border-radius:12px;padding:12px 14px;font-size:.95rem;color:var(--ink)}
+.st-tr p{margin:0}
+.st-moral{margin:auto 0 0;background:var(--gold-soft);border-radius:12px;padding:10px 14px;font-size:.92rem}
+.st-moral b{color:var(--gold)}
+/* freebies */
+.free{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:26px}
+.fr{border:2px dashed var(--teal);border-radius:14px;padding:20px;text-decoration:none;display:flex;flex-direction:column;gap:6px;background:var(--bg)}
+.fr .ar{font-family:var(--f-ar);font-size:2.2rem;color:var(--gold);direction:rtl;line-height:1.3}
+.fr h3{font-size:1.05rem}
+.fr p{margin:0;color:var(--muted);font-size:.88rem}
+.fr .go{font-weight:600;font-size:.88rem;margin-top:6px}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px;margin-top:26px;counter-reset:s}
+.step{counter-increment:s}
+.step::before{content:counter(s);display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--teal);color:#fff;font-family:var(--f-display);font-weight:700;margin-bottom:10px}
+.step h3{font-size:1.05rem}.step p{margin:.3rem 0 0;color:var(--muted);font-size:.92rem}
+
+footer{background:var(--navy);color:var(--on-navy);padding-block:40px;font-size:.9rem}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px;align-items:center}
+.social{display:flex;gap:10px;flex-wrap:wrap}
+.social a{text-decoration:none;border:1px solid rgba(31,42,68,.3);background:#fff8;padding:.45rem .9rem;border-radius:999px}
+.social a:hover{border-color:var(--gold);color:var(--gold)}
+footer small{opacity:.7}
+.langs{display:flex;flex-wrap:wrap;gap:4px 12px;margin-top:10px;font-size:.8rem}.langs a{text-decoration:none;opacity:.8}.langs a:hover{opacity:1;text-decoration:underline}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+.lang{display:inline-flex}
+.lang select{font:600 .85rem var(--f-display);color:var(--on-navy);background:#fff;border:1px solid var(--line);border-radius:999px;padding:.45rem 2rem .45rem .9rem;cursor:pointer;appearance:none;background-image:linear-gradient(45deg,transparent 50%,currentColor 50%),linear-gradient(135deg,currentColor 50%,transparent 50%);background-position:calc(100% - 15px) 52%,calc(100% - 10px) 52%;background-size:5px 5px;background-repeat:no-repeat}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.nav-right{display:flex;align-items:center;gap:1.2rem}
+</style>
+
+<header class="top">
+  <div class="wrap nav">
+    <a class="brand" href="#top"><svg class="mark" viewBox="40 30 330 320" aria-hidden="true"><g fill="none" stroke="#0e8a6b" stroke-width="34" stroke-linecap="round" stroke-linejoin="round"> <path d="M200 232 C226 146 345 132 340 196 C337 240 262 238 200 232"/> <path d="M200 232 L200 204"/> <path d="M200 232 C206 330 66 338 70 210"/></g><g transform="translate(262 82)"> <g transform="rotate(-22)"><ellipse rx="56" ry="15" fill="none" stroke="#ff6f61" stroke-width="7"/></g> <circle r="28" fill="#ff6f61"/> <g fill="none" stroke="#ffffff" stroke-width="4"><ellipse rx="11" ry="27"/><line x1="-27" y1="0" x2="27" y2="0"/></g> <g transform="rotate(-22)"><path d="M-56 0 A56 15 0 0 0 56 0" fill="none" stroke="#ff6f61" stroke-width="7"/></g></g></svg><span>Arabic <b>Orbit</b></span></a>
+    <div class="nav-right">
+      <ul>
+        <li><a href="#letters" data-i18n="nav1"></a></li>
+        <li><a href="#videos" data-i18n="nav2"></a></li>
+        <li><a href="#stories" id="navSt"></a></li>
+        <li><a href="#books" data-i18n="nav3"></a></li>
+        <li><a href="#free" data-i18n="nav4"></a></li>
+      </ul>
+      <label class="lang"><span class="sr">Language</span><select id="langSel"></select></label>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow" data-i18n="tag"></div>
+      <h1 data-i18n="h1"></h1>
+      <p data-i18n="heroP"></p>
+      <div class="ctas">
+        <a class="btn btn-gold" href="#books" data-i18n="cta1"></a>
+        <a class="btn btn-ghost" href="#free" data-i18n="cta2"></a>
+      </div>
+      <div class="facts">
+        <div><strong>11</strong><span data-i18n="f1"></span></div>
+        <div><strong>28</strong><span data-i18n="f2"></span></div>
+        <div><strong>{{PRICE}}</strong><span data-i18n="f3"></span></div>
+      </div>
+    </div>
+    <div class="book" aria-hidden="true">
+      <div class="s" data-i18n="bookS"></div>
+      <div class="ar">أ ب ت</div>
+      <div><div class="t" data-i18n="bookT"></div><div class="s" data-i18n="bookBy"></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="letters">
+  <div class="wrap">
+    <div class="eyebrow" data-i18n="lEy"></div>
+    <h2 data-i18n="lH"></h2>
+    <p class="lead" data-i18n="lP"></p>
+    <div class="alpha-wrap">
+      <div class="alpha" id="alpha" role="group" aria-label="Arabic alphabet"></div>
+      <aside class="detail" aria-live="polite">
+        <button type="button" class="big" id="dBig" aria-label="Play">ب</button>
+        <div class="name" id="dName">Bā'</div>
+        <div class="sound" id="dSound"></div>
+        <div class="forms" id="dForms"></div>
+        <button type="button" class="say-name" id="sayName"></button>
+        <div class="snd" id="dSnd"></div>
+        <div class="vowel-key" data-i18n="vKey"></div>
+        <p class="novoice" id="noVoice" hidden></p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section id="videos" class="alt">
+  <div class="wrap">
+    <div class="eyebrow" data-i18n="vEy"></div>
+    <h2 data-i18n="vH"></h2>
+    <p class="lead" data-i18n="vP"></p>
+    <div class="vids" id="vids"></div>
+  </div>
+</section>
+
+<section id="stories">
+  <div class="wrap">
+    <div class="eyebrow" id="stEy"></div>
+    <h2 id="stH"></h2>
+    <p class="lead" id="stP"></p>
+    <div class="stories" id="storyList"></div>
+  </div>
+</section>
+
+<section id="books">
+  <div class="wrap">
+    <div class="eyebrow" data-i18n="bEy"></div>
+    <h2 data-i18n="bH"></h2>
+    <p class="lead" data-i18n="bP"></p>
+    <div class="eds" id="eds"></div>
+    <div class="picker" id="picker"></div>
+  </div>
+</section>
+
+<section id="free" class="alt">
+  <div class="wrap">
+    <div class="eyebrow" data-i18n="frEy"></div>
+    <h2 data-i18n="frH"></h2>
+    <p class="lead" data-i18n="frP"></p>
+    <div class="free" id="freeList"></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow" data-i18n="sEy"></div>
+    <h2 data-i18n="sH"></h2>
+    <div class="steps">
+      <div class="step"><h3 data-i18n="s1h"></h3><p data-i18n="s1p"></p></div>
+      <div class="step"><h3 data-i18n="s2h"></h3><p data-i18n="s2p"></p></div>
+      <div class="step"><h3 data-i18n="s3h"></h3><p data-i18n="s3p"></p></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div><div class="brand"><svg class="mark" viewBox="40 30 330 320" aria-hidden="true"><g fill="none" stroke="#0e8a6b" stroke-width="34" stroke-linecap="round" stroke-linejoin="round"> <path d="M200 232 C226 146 345 132 340 196 C337 240 262 238 200 232"/> <path d="M200 232 L200 204"/> <path d="M200 232 C206 330 66 338 70 210"/></g><g transform="translate(262 82)"> <g transform="rotate(-22)"><ellipse rx="56" ry="15" fill="none" stroke="#ff6f61" stroke-width="7"/></g> <circle r="28" fill="#ff6f61"/> <g fill="none" stroke="#ffffff" stroke-width="4"><ellipse rx="11" ry="27"/><line x1="-27" y1="0" x2="27" y2="0"/></g> <g transform="rotate(-22)"><path d="M-56 0 A56 15 0 0 0 56 0" fill="none" stroke="#ff6f61" stroke-width="7"/></g></g></svg><span>Arabic <b>Orbit</b></span></div><small data-i18n="foot"></small><nav class="langs" aria-label="Languages"><!--LANGLINKS--></nav></div>
+    <div class="social">
+      <a href="{{FACEBOOK}}" target="_blank" rel="noopener">Facebook</a>
+      <a href="{{YOUTUBE}}" target="_blank" rel="noopener">YouTube</a>
+      <a href="{{PINTEREST}}" target="_blank" rel="noopener">Pinterest</a>
+      <a href="{{SHOP}}" target="_blank" rel="noopener" data-i18n="shop"></a>
+    </div>
+  </div>
+</footer>
+
+<script id="site-data" type="application/json">{{DATA}}</script>
+<script>
+/* ===== Translations. To add a language: copy the "fr" block, change the code and translate. ===== */
+const T={
+en:{label:"EN",
+ nav1:"Alphabet",nav2:"Free videos",nav3:"Books",nav4:"Free pages",
+ tag:"Arabic for Everyone, Everywhere",
+ h1:"Read and write Arabic <span>from your very first letter.</span>",
+ heroP:"Free video lessons, free sample pages, and a printable step-by-step Arabic workbook written in your own language. Made by a teacher, for complete beginners.",
+ cta1:"Choose your language",cta2:"Download free pages",
+ f1:"languages",f2:"letters, step by step",f3:"printable PDF",
+ bookS:"Printable workbook · PDF",bookT:"Learn Arabic",bookBy:"by Adil.B · Arabic Orbit",
+ lEy:"Free mini-lesson",lH:"Tap a letter to see its four shapes",
+ lP:"Arabic is written right to left, and most letters change shape depending on where they sit in a word. This is the first lesson of the workbook.",
+ vKey:"with short vowels: fatḥa (a) · kasra (i) · ḍamma (u)",
+ forms:["isolated","start","middle","end"],
+ vEy:"Free video lessons",vH:"Watch the lessons on YouTube",vP:"Short lessons you can follow with the workbook open. New videos every week in English and French.",
+ vids:[["Lesson 1","The Arabic letters","Names, sounds and how to write each letter."],["Lesson 2","Short vowels","Fatḥa, kasra and ḍamma: your first syllables."],["Lesson 3","Sun and moon letters","When the “l” of “al-” is pronounced, and when it disappears."],["Lessons 1–3","Full review: lessons 1 to 3","One video that brings the first three lessons together."],["Lesson 4","Long vowels","Alif, Waw and Yaa: how to stretch a sound."],["Lesson 5","Sukun and Shadda","The silent letter and the doubled letter."],["Lesson 6","Tanween","The endings -un, -an and -in."],["Lessons 4–6","Full review: lessons 4 to 6","Long vowels, sukun, shadda and tanween in one video."]],
+ bEy:"The workbook",bH:"One Arabic workbook, written in 11 languages",bP:"Every explanation is in your language, so you learn Arabic without needing English. Printable PDF, instant download.",
+ all:"All",edMeta:"Learn Arabic · printable PDF workbook",
+ frEy:"Free pages",frH:"Try before you buy",frP:"Download real pages from the workbook for free. Print them, practise, and see if the method suits you.",
+ free:[["Letter tracing sheets","Trace each letter with guided arrows."],["Short vowels practice","Read and write your first syllables."],["Everyday Islamic phrases","Common phrases with meaning and pronunciation."],["Free sample in your language","Each of the 10 translated editions has its own free sample."]],
+ dl:"Download free →",pick:"Pick your language →",
+ sEy:"How it works",sH:"From zero to reading in three steps",
+ s1h:"Watch a free lesson",s1p:"Each video covers one small step: letters, vowels, then words.",
+ s2h:"Practise on paper",s2p:"Print the matching workbook pages and write along.",
+ s3h:"Keep going at your pace",s3p:"The full workbook takes you through all 28 letters and your first words.",
+ foot:"Workbooks by Adil.B · © 2026 Arabic Orbit",shop:"Shop",
+ sound:["Long “aa”, or a carrier for vowels","Sounds like “b” in “book”","Sounds like “t” in “tea”","Sounds like “th” in “think”","Sounds like “j” in “jam”","A breathy “h” from the throat","Like “ch” in Scottish “loch”","Sounds like “d” in “door”","Sounds like “th” in “this”","A rolled “r”","Sounds like “z” in “zoo”","Sounds like “s” in “sun”","Sounds like “sh” in “shop”","A heavy “s”","A heavy “d”","A heavy “t”","A heavy “th” as in “this”","A sound from deep in the throat","Like a French “r”","Sounds like “f” in “fish”","A “k” from the back of the throat","Sounds like “k” in “kite”","Sounds like “l” in “lamp”","Sounds like “m” in “moon”","Sounds like “n” in “nose”","Sounds like “h” in “hat”","“w” in “water”, or a long “oo”","“y” in “yes”, or a long “ee”"]},
+fr:{label:"FR",
+ nav1:"Alphabet",nav2:"Vidéos gratuites",nav3:"Livres",nav4:"Pages gratuites",
+ tag:"L'arabe pour tous, partout",
+ h1:"Lisez et écrivez l'arabe <span>dès la première lettre.</span>",
+ heroP:"Des leçons vidéo gratuites, des pages d'essai gratuites et un cahier d'arabe imprimable, pas à pas, écrit dans votre langue. Conçu par un enseignant, pour les grands débutants.",
+ cta1:"Choisir ma langue",cta2:"Télécharger les pages gratuites",
+ f1:"langues",f2:"lettres, pas à pas",f3:"PDF imprimable",
+ bookS:"Cahier imprimable · PDF",bookT:"Apprendre l'arabe",bookBy:"par Adil.B · Arabic Orbit",
+ lEy:"Mini-leçon gratuite",lH:"Touchez une lettre pour voir ses quatre formes",
+ lP:"L'arabe s'écrit de droite à gauche, et la plupart des lettres changent de forme selon leur place dans le mot. C'est la première leçon du cahier.",
+ vKey:"avec les voyelles courtes : fatḥa (a) · kasra (i) · ḍamma (ou)",
+ forms:["isolée","début","milieu","fin"],
+ vEy:"Leçons vidéo gratuites",vH:"Regardez les leçons sur YouTube",vP:"Des leçons courtes à suivre avec le cahier ouvert. De nouvelles vidéos chaque semaine, en français et en anglais.",
+ vids:[["Leçon 1","Les lettres arabes","Le nom, le son et l'écriture de chaque lettre."],["Leçon 2","Les voyelles courtes","Fatḥa, kasra et ḍamma : vos premières syllabes."],["Leçon 3","Lettres solaires et lunaires","Quand le « l » de « al- » se prononce, et quand il disparaît."],["Leçons 1–3","Révision : leçons 1 à 3","Une seule vidéo qui reprend les trois premières leçons."]],
+ bEy:"Le cahier",bH:"Un cahier d'arabe, écrit en 11 langues",bP:"Toutes les explications sont dans votre langue : vous apprenez l'arabe sans passer par l'anglais. PDF imprimable, téléchargement immédiat.",
+ all:"Toutes",edMeta:"Apprendre l'arabe · cahier PDF imprimable",
+ frEy:"Pages gratuites",frH:"Essayez avant d'acheter",frP:"Téléchargez gratuitement de vraies pages du cahier. Imprimez-les, entraînez-vous et voyez si la méthode vous convient.",
+ free:[["Fiches de tracé des lettres","Tracez chaque lettre en suivant les flèches."],["Exercices sur les voyelles courtes","Lisez et écrivez vos premières syllabes."],["Expressions islamiques du quotidien","Expressions courantes avec leur sens et leur prononciation."],["Extrait gratuit dans votre langue","Chacune des 10 éditions traduites a son propre extrait gratuit."]],
+ dl:"Télécharger gratuitement →",pick:"Choisir ma langue →",
+ sEy:"Comment ça marche",sH:"De zéro à la lecture en trois étapes",
+ s1h:"Regardez une leçon gratuite",s1p:"Chaque vidéo couvre une petite étape : les lettres, les voyelles, puis les mots.",
+ s2h:"Entraînez-vous sur papier",s2p:"Imprimez les pages du cahier correspondantes et écrivez en même temps.",
+ s3h:"Avancez à votre rythme",s3p:"Le cahier complet vous fait parcourir les 28 lettres et vos premiers mots.",
+ foot:"Cahiers par Adil.B · © 2026 Arabic Orbit",shop:"Boutique",
+ sound:["« a » long, ou support des voyelles","Comme le « b » de « bateau »","Comme le « t » de « table »","Comme le « th » anglais de « think »","Comme le « dj » de « djembé »","Un « h » soufflé du fond de la gorge","Comme la « jota » espagnole","Comme le « d » de « dos »","Comme le « th » anglais de « this »","Un « r » roulé","Comme le « z » de « zoo »","Comme le « s » de « sel »","Comme le « ch » de « chat »","Un « s » emphatique","Un « d » emphatique","Un « t » emphatique","Un « th » de « this », emphatique","Un son profond de la gorge","Comme le « r » français","Comme le « f » de « fille »","Un « k » prononcé au fond de la gorge","Comme le « k » de « kilo »","Comme le « l » de « lune »","Comme le « m » de « mer »","Comme le « n » de « nez »","Un « h » aspiré, comme en anglais « hat »","Comme « ou » dans « oui », ou un « ou » long","Comme le « y » de « yeux », ou un « i » long"]},
+es:{label:"Español",soundLabel:"Sonido",
+ nav1:"Alfabeto",nav2:"Vídeos gratis",nav3:"Libros",nav4:"Páginas gratis",
+ tag:"Árabe para todos, en todas partes",
+ h1:"Lee y escribe en árabe <span>desde la primera letra.</span>",
+ heroP:"Clases en vídeo gratis, páginas de muestra gratis y un cuaderno de árabe imprimable, paso a paso, escrito en tu idioma. Hecho por un profesor, para principiantes absolutos.",
+ cta1:"Elige tu idioma",cta2:"Descargar páginas gratis",
+ f1:"idiomas",f2:"letras, paso a paso",f3:"PDF imprimible",
+ bookS:"Cuaderno imprimible · PDF",bookT:"Aprende árabe",bookBy:"por Adil.B · Arabic Orbit",
+ lEy:"Mini clase gratis",lH:"Toca una letra para ver sus cuatro formas",
+ lP:"El árabe se escribe de derecha a izquierda, y la mayoría de las letras cambian de forma según su lugar en la palabra. Esta es la primera lección del cuaderno.",
+ vKey:"con vocales cortas: fatḥa (a) · kasra (i) · ḍamma (u)",
+ forms:["aislada","inicio","medio","final"],
+ vEy:"Clases en vídeo gratis",vH:"Mira las clases en YouTube",vP:"Clases cortas para seguir con el cuaderno abierto. Vídeos nuevos cada semana, en inglés y francés.",
+ vids:[["Lección 1","Las letras árabes","Nombre, sonido y escritura de cada letra."],["Lección 2","Las vocales cortas","Fatḥa, kasra y ḍamma: tus primeras sílabas."],["Lección 3","Letras solares y lunares","Cuándo se pronuncia la «l» de «al-» y cuándo desaparece."],["Lecciones 1–3","Repaso: lecciones 1 a 3","Un solo vídeo con las tres primeras lecciones."]],
+ bEy:"El cuaderno",bH:"Un cuaderno de árabe, escrito en 11 idiomas",bP:"Todas las explicaciones están en tu idioma, así aprendes árabe sin pasar por el inglés. PDF imprimible, descarga inmediata.",
+ all:"Todos",edMeta:"Aprende árabe · cuaderno PDF imprimible",
+ frEy:"Páginas gratis",frH:"Pruébalo antes de comprar",frP:"Descarga gratis páginas reales del cuaderno. Imprímelas, practica y comprueba si el método es para ti.",
+ free:[["Fichas para trazar letras","Traza cada letra siguiendo las flechas."],["Práctica de vocales cortas","Lee y escribe tus primeras sílabas."],["Frases islámicas cotidianas","Frases comunes con su significado y pronunciación."],["Muestra gratis en tu idioma","Cada una de las 10 ediciones traducidas tiene su muestra gratis."]],
+ dl:"Descargar gratis →",pick:"Elegir mi idioma →",
+ sEy:"Cómo funciona",sH:"De cero a leer en tres pasos",
+ s1h:"Mira una clase gratis",s1p:"Cada vídeo es un pequeño paso: letras, vocales y luego palabras.",
+ s2h:"Practica en papel",s2p:"Imprime las páginas del cuaderno y escribe a la vez.",
+ s3h:"Avanza a tu ritmo",s3p:"El cuaderno completo te lleva por las 28 letras y tus primeras palabras.",
+ foot:"Cuadernos de Adil.B · © 2026 Arabic Orbit",shop:"Tienda"},
+pt:{label:"Português",soundLabel:"Som",
+ nav1:"Alfabeto",nav2:"Vídeos grátis",nav3:"Livros",nav4:"Páginas grátis",
+ tag:"Árabe para todos, em todo lugar",
+ h1:"Leia e escreva em árabe <span>desde a primeira letra.</span>",
+ heroP:"Aulas em vídeo grátis, páginas de amostra grátis e um caderno de árabe para imprimir, passo a passo, escrito no seu idioma. Feito por um professor, para iniciantes.",
+ cta1:"Escolha seu idioma",cta2:"Baixar páginas grátis",
+ f1:"idiomas",f2:"letras, passo a passo",f3:"PDF para imprimir",
+ bookS:"Caderno para imprimir · PDF",bookT:"Aprenda árabe",bookBy:"por Adil.B · Arabic Orbit",
+ lEy:"Mini aula grátis",lH:"Toque numa letra para ver suas quatro formas",
+ lP:"O árabe se escreve da direita para a esquerda, e a maioria das letras muda de forma conforme sua posição na palavra. Esta é a primeira lição do caderno.",
+ vKey:"com vogais curtas: fatḥa (a) · kasra (i) · ḍamma (u)",
+ forms:["isolada","início","meio","fim"],
+ vEy:"Aulas em vídeo grátis",vH:"Assista às aulas no YouTube",vP:"Aulas curtas para acompanhar com o caderno aberto. Vídeos novos toda semana, em inglês e francês.",
+ vids:[["Lição 1","As letras árabes","Nome, som e escrita de cada letra."],["Lição 2","As vogais curtas","Fatḥa, kasra e ḍamma: suas primeiras sílabas."],["Lição 3","Letras solares e lunares","Quando o «l» de «al-» é pronunciado e quando desaparece."],["Lições 1–3","Revisão: lições 1 a 3","Um único vídeo com as três primeiras lições."]],
+ bEy:"O caderno",bH:"Um caderno de árabe, escrito em 11 idiomas",bP:"Todas as explicações estão no seu idioma, para aprender árabe sem precisar do inglês. PDF para imprimir, download imediato.",
+ all:"Todos",edMeta:"Aprenda árabe · caderno PDF para imprimir",
+ frEy:"Páginas grátis",frH:"Experimente antes de comprar",frP:"Baixe grátis páginas reais do caderno. Imprima, pratique e veja se o método é para você.",
+ free:[["Folhas para traçar letras","Trace cada letra seguindo as setas."],["Prática de vogais curtas","Leia e escreva suas primeiras sílabas."],["Frases islâmicas do dia a dia","Frases comuns com significado e pronúncia."],["Amostra grátis no seu idioma","Cada uma das 10 edições traduzidas tem sua amostra grátis."]],
+ dl:"Baixar grátis →",pick:"Escolher meu idioma →",
+ sEy:"Como funciona",sH:"Do zero à leitura em três passos",
+ s1h:"Assista a uma aula grátis",s1p:"Cada vídeo é um pequeno passo: letras, vogais e depois palavras.",
+ s2h:"Pratique no papel",s2p:"Imprima as páginas do caderno e escreva junto.",
+ s3h:"Avance no seu ritmo",s3p:"O caderno completo percorre as 28 letras e suas primeiras palavras.",
+ foot:"Cadernos de Adil.B · © 2026 Arabic Orbit",shop:"Loja"},
+it:{label:"Italiano",soundLabel:"Suono",
+ nav1:"Alfabeto",nav2:"Video gratis",nav3:"Libri",nav4:"Pagine gratis",
+ tag:"L'arabo per tutti, ovunque",
+ h1:"Leggi e scrivi l'arabo <span>dalla prima lettera.</span>",
+ heroP:"Lezioni video gratuite, pagine di prova gratuite e un quaderno di arabo stampabile, passo dopo passo, scritto nella tua lingua. Creato da un insegnante, per principianti assoluti.",
+ cta1:"Scegli la tua lingua",cta2:"Scarica le pagine gratis",
+ f1:"lingue",f2:"lettere, passo dopo passo",f3:"PDF stampabile",
+ bookS:"Quaderno stampabile · PDF",bookT:"Impara l'arabo",bookBy:"di Adil.B · Arabic Orbit",
+ lEy:"Mini lezione gratuita",lH:"Tocca una lettera per vedere le sue quattro forme",
+ lP:"L'arabo si scrive da destra a sinistra e quasi tutte le lettere cambiano forma secondo la posizione nella parola. È la prima lezione del quaderno.",
+ vKey:"con le vocali brevi: fatḥa (a) · kasra (i) · ḍamma (u)",
+ forms:["isolata","inizio","centro","fine"],
+ vEy:"Lezioni video gratuite",vH:"Guarda le lezioni su YouTube",vP:"Lezioni brevi da seguire con il quaderno aperto. Nuovi video ogni settimana, in inglese e francese.",
+ vids:[["Lezione 1","Le lettere arabe","Nome, suono e scrittura di ogni lettera."],["Lezione 2","Le vocali brevi","Fatḥa, kasra e ḍamma: le tue prime sillabe."],["Lezione 3","Lettere solari e lunari","Quando la «l» di «al-» si pronuncia e quando scompare."],["Lezioni 1–3","Ripasso: lezioni 1–3","Un solo video con le prime tre lezioni."]],
+ bEy:"Il quaderno",bH:"Un quaderno di arabo, scritto in 11 lingue",bP:"Tutte le spiegazioni sono nella tua lingua: impari l'arabo senza passare dall'inglese. PDF stampabile, download immediato.",
+ all:"Tutte",edMeta:"Impara l'arabo · quaderno PDF stampabile",
+ frEy:"Pagine gratis",frH:"Prova prima di comprare",frP:"Scarica gratis vere pagine del quaderno. Stampale, esercitati e scopri se il metodo fa per te.",
+ free:[["Schede per tracciare le lettere","Traccia ogni lettera seguendo le frecce."],["Esercizi sulle vocali brevi","Leggi e scrivi le tue prime sillabe."],["Frasi islamiche quotidiane","Frasi comuni con significato e pronuncia."],["Campione gratuito nella tua lingua","Ognuna delle 10 edizioni tradotte ha il suo campione gratuito."]],
+ dl:"Scarica gratis →",pick:"Scegli la mia lingua →",
+ sEy:"Come funziona",sH:"Da zero alla lettura in tre passi",
+ s1h:"Guarda una lezione gratuita",s1p:"Ogni video è un piccolo passo: lettere, vocali e poi parole.",
+ s2h:"Esercitati su carta",s2p:"Stampa le pagine del quaderno e scrivi insieme al video.",
+ s3h:"Vai al tuo ritmo",s3p:"Il quaderno completo ti guida per tutte le 28 lettere e le prime parole.",
+ foot:"Quaderni di Adil.B · © 2026 Arabic Orbit",shop:"Negozio"},
+de:{label:"Deutsch",soundLabel:"Laut",
+ nav1:"Alphabet",nav2:"Gratis-Videos",nav3:"Bücher",nav4:"Gratis-Seiten",
+ tag:"Arabisch für alle, überall",
+ h1:"Arabisch lesen und schreiben <span>ab dem ersten Buchstaben.</span>",
+ heroP:"Kostenlose Videolektionen, kostenlose Probeseiten und ein druckbares Arabisch-Arbeitsheft, Schritt für Schritt, in deiner Sprache. Von einem Lehrer, für absolute Anfänger.",
+ cta1:"Sprache wählen",cta2:"Gratis-Seiten herunterladen",
+ f1:"Sprachen",f2:"Buchstaben, Schritt für Schritt",f3:"druckbares PDF",
+ bookS:"Druckbares Arbeitsheft · PDF",bookT:"Arabisch lernen",bookBy:"von Adil.B · Arabic Orbit",
+ lEy:"Gratis-Minilektion",lH:"Tippe auf einen Buchstaben, um seine vier Formen zu sehen",
+ lP:"Arabisch wird von rechts nach links geschrieben, und die meisten Buchstaben ändern ihre Form je nach Stellung im Wort. Das ist die erste Lektion des Arbeitshefts.",
+ vKey:"mit kurzen Vokalen: Fatḥa (a) · Kasra (i) · Ḍamma (u)",
+ forms:["allein","Anfang","Mitte","Ende"],
+ vEy:"Kostenlose Videolektionen",vH:"Sieh dir die Lektionen auf YouTube an",vP:"Kurze Lektionen zum Mitmachen mit offenem Arbeitsheft. Jede Woche neue Videos auf Englisch und Französisch.",
+ vids:[["Lektion 1","Die arabischen Buchstaben","Name, Laut und Schreibweise jedes Buchstabens."],["Lektion 2","Kurze Vokale","Fatḥa, Kasra und Ḍamma: deine ersten Silben."],["Lektion 3","Sonnen- und Mondbuchstaben","Wann das „l“ von „al-“ gesprochen wird und wann es verschwindet."],["Lektionen 1–3","Wiederholung: Lektionen 1–3","Ein Video mit den ersten drei Lektionen."]],
+ bEy:"Das Arbeitsheft",bH:"Ein Arabisch-Arbeitsheft in 11 Sprachen",bP:"Alle Erklärungen sind in deiner Sprache – du lernst Arabisch ohne Umweg über Englisch. Druckbares PDF, sofortiger Download.",
+ all:"Alle",edMeta:"Arabisch lernen · druckbares PDF-Arbeitsheft",
+ frEy:"Gratis-Seiten",frH:"Erst testen, dann kaufen",frP:"Lade echte Seiten aus dem Arbeitsheft kostenlos herunter. Drucke sie aus, übe und finde heraus, ob die Methode zu dir passt.",
+ free:[["Buchstaben-Nachspurblätter","Spure jeden Buchstaben mit Pfeilen nach."],["Übungen zu kurzen Vokalen","Lies und schreibe deine ersten Silben."],["Islamische Alltagsausdrücke","Häufige Ausdrücke mit Bedeutung und Aussprache."],["Gratis-Probe in deiner Sprache","Jede der 10 übersetzten Ausgaben hat eine eigene Gratis-Probe."]],
+ dl:"Gratis herunterladen →",pick:"Meine Sprache wählen →",
+ sEy:"So funktioniert's",sH:"In drei Schritten von null zum Lesen",
+ s1h:"Gratis-Lektion ansehen",s1p:"Jedes Video ist ein kleiner Schritt: Buchstaben, Vokale, dann Wörter.",
+ s2h:"Auf Papier üben",s2p:"Drucke die passenden Seiten aus und schreibe mit.",
+ s3h:"In deinem Tempo weiter",s3p:"Das ganze Arbeitsheft führt dich durch alle 28 Buchstaben und deine ersten Wörter.",
+ foot:"Arbeitshefte von Adil.B · © 2026 Arabic Orbit",shop:"Shop"},
+nl:{label:"Nederlands",soundLabel:"Klank",
+ nav1:"Alfabet",nav2:"Gratis video's",nav3:"Boeken",nav4:"Gratis pagina's",
+ tag:"Arabisch voor iedereen, overal",
+ h1:"Arabisch lezen en schrijven <span>vanaf de eerste letter.</span>",
+ heroP:"Gratis videolessen, gratis proefpagina's en een printbaar Arabisch werkboek, stap voor stap, in je eigen taal. Gemaakt door een leraar, voor echte beginners.",
+ cta1:"Kies je taal",cta2:"Gratis pagina's downloaden",
+ f1:"talen",f2:"letters, stap voor stap",f3:"printbare pdf",
+ bookS:"Printbaar werkboek · PDF",bookT:"Leer Arabisch",bookBy:"door Adil.B · Arabic Orbit",
+ lEy:"Gratis minilesje",lH:"Tik op een letter om de vier vormen te zien",
+ lP:"Arabisch schrijf je van rechts naar links, en de meeste letters veranderen van vorm naargelang hun plek in het woord. Dit is de eerste les van het werkboek.",
+ vKey:"met korte klinkers: fatḥa (a) · kasra (i) · ḍamma (oe)",
+ forms:["los","begin","midden","eind"],
+ vEy:"Gratis videolessen",vH:"Bekijk de lessen op YouTube",vP:"Korte lessen om te volgen met het werkboek open. Elke week nieuwe video's in het Engels en Frans.",
+ vids:[["Les 1","De Arabische letters","Naam, klank en schrijfwijze van elke letter."],["Les 2","Korte klinkers","Fatḥa, kasra en ḍamma: je eerste lettergrepen."],["Les 3","Zon- en maanletters","Wanneer je de „l“ van „al-“ uitspreekt en wanneer hij verdwijnt."],["Lessen 1–3","Herhaling: lessen 1–3","Eén video met de eerste drie lessen."]],
+ bEy:"Het werkboek",bH:"Eén Arabisch werkboek, in 11 talen",bP:"Alle uitleg staat in je eigen taal, zodat je Arabisch leert zonder Engels nodig te hebben. Printbare pdf, direct te downloaden.",
+ all:"Alle",edMeta:"Leer Arabisch · printbaar pdf-werkboek",
+ frEy:"Gratis pagina's",frH:"Probeer eerst, koop daarna",frP:"Download gratis echte pagina's uit het werkboek. Print ze, oefen en ontdek of de methode bij je past.",
+ free:[["Letters natrekken","Trek elke letter na met pijltjes."],["Oefenen met korte klinkers","Lees en schrijf je eerste lettergrepen."],["Islamitische uitdrukkingen","Veelgebruikte uitdrukkingen met betekenis en uitspraak."],["Gratis proef in je taal","Elk van de 10 vertaalde edities heeft een eigen gratis proef."]],
+ dl:"Gratis downloaden →",pick:"Kies mijn taal →",
+ sEy:"Zo werkt het",sH:"Van nul naar lezen in drie stappen",
+ s1h:"Bekijk een gratis les",s1p:"Elke video is een kleine stap: letters, klinkers en dan woorden.",
+ s2h:"Oefen op papier",s2p:"Print de bijbehorende pagina's en schrijf mee.",
+ s3h:"Ga door in je eigen tempo",s3p:"Het volledige werkboek neemt je mee door alle 28 letters en je eerste woorden.",
+ foot:"Werkboeken van Adil.B · © 2026 Arabic Orbit",shop:"Winkel"},
+tr:{label:"Türkçe",soundLabel:"Ses",
+ nav1:"Alfabe",nav2:"Ücretsiz videolar",nav3:"Kitaplar",nav4:"Ücretsiz sayfalar",
+ tag:"Herkes için, her yerde Arapça",
+ h1:"Arapçayı <span>ilk harften itibaren</span> okuyup yazın.",
+ heroP:"Ücretsiz video dersler, ücretsiz örnek sayfalar ve kendi dilinizde yazılmış, adım adım ilerleyen, yazdırılabilir bir Arapça çalışma kitabı. Bir öğretmen tarafından, sıfırdan başlayanlar için hazırlandı.",
+ cta1:"Dilinizi seçin",cta2:"Ücretsiz sayfaları indirin",
+ f1:"dil",f2:"harf, adım adım",f3:"yazdırılabilir PDF",
+ bookS:"Yazdırılabilir kitap · PDF",bookT:"Arapça öğren",bookBy:"Adil.B · Arabic Orbit",
+ lEy:"Ücretsiz mini ders",lH:"Dört şeklini görmek için bir harfe dokunun",
+ lP:"Arapça sağdan sola yazılır ve harflerin çoğu kelimedeki yerine göre şekil değiştirir. Bu, çalışma kitabının ilk dersidir.",
+ vKey:"kısa ünlülerle: üstün (a) · esre (i) · ötre (u)",
+ forms:["tek","baş","orta","son"],
+ vEy:"Ücretsiz video dersler",vH:"Dersleri YouTube'da izleyin",vP:"Kitap açıkken takip edebileceğiniz kısa dersler. Her hafta İngilizce ve Fransızca yeni videolar.",
+ vids:[["Ders 1","Arap harfleri","Her harfin adı, sesi ve yazılışı."],["Ders 2","Kısa ünlüler","Üstün, esre ve ötre: ilk heceleriniz."],["Ders 3","Şemsî ve kamerî harfler","«el-» takısındaki «l» ne zaman okunur, ne zaman kaybolur."],["Ders 1–3","Tekrar: ders 1–3","İlk üç dersi bir araya getiren tek video."]],
+ bEy:"Çalışma kitabı",bH:"11 dilde yazılmış tek bir Arapça kitap",bP:"Tüm açıklamalar kendi dilinizde; Arapçayı İngilizceye ihtiyaç duymadan öğrenirsiniz. Yazdırılabilir PDF, anında indirme.",
+ all:"Tümü",edMeta:"Arapça öğren · yazdırılabilir PDF kitap",
+ frEy:"Ücretsiz sayfalar",frH:"Satın almadan önce deneyin",frP:"Kitaptan gerçek sayfaları ücretsiz indirin. Yazdırın, çalışın ve yöntemin size uygun olup olmadığını görün.",
+ free:[["Harf yazma çalışma kâğıtları","Her harfi oklarla takip ederek yazın."],["Kısa ünlü alıştırmaları","İlk hecelerinizi okuyun ve yazın."],["Günlük İslami ifadeler","Anlamı ve okunuşuyla sık kullanılan ifadeler."],["Kendi dilinizde ücretsiz örnek","Çevrilmiş 10 baskının her birinin ücretsiz örneği var."]],
+ dl:"Ücretsiz indir →",pick:"Dilimi seç →",
+ sEy:"Nasıl çalışır",sH:"Üç adımda sıfırdan okumaya",
+ s1h:"Ücretsiz bir ders izleyin",s1p:"Her video küçük bir adım: harfler, ünlüler, sonra kelimeler.",
+ s2h:"Kâğıt üzerinde çalışın",s2p:"İlgili sayfaları yazdırın ve birlikte yazın.",
+ s3h:"Kendi hızınızda ilerleyin",s3p:"Kitabın tamamı 28 harfin hepsini ve ilk kelimelerinizi kapsar.",
+ foot:"Kitaplar: Adil.B · © 2026 Arabic Orbit",shop:"Mağaza"},
+ru:{label:"Русский",soundLabel:"Звук",
+ nav1:"Алфавит",nav2:"Бесплатные видео",nav3:"Книги",nav4:"Бесплатные страницы",
+ tag:"Арабский для всех и везде",
+ h1:"Читайте и пишите по-арабски <span>с первой буквы.</span>",
+ heroP:"Бесплатные видеоуроки, бесплатные образцы страниц и пошаговая рабочая тетрадь по арабскому для печати на вашем языке. Составлена учителем для начинающих с нуля.",
+ cta1:"Выберите язык",cta2:"Скачать бесплатные страницы",
+ f1:"языков",f2:"букв, шаг за шагом",f3:"PDF для печати",
+ bookS:"Тетрадь для печати · PDF",bookT:"Учим арабский",bookBy:"автор Adil.B · Arabic Orbit",
+ lEy:"Бесплатный мини-урок",lH:"Нажмите на букву, чтобы увидеть четыре её формы",
+ lP:"Арабский пишется справа налево, и большинство букв меняют форму в зависимости от места в слове. Это первый урок тетради.",
+ vKey:"с краткими гласными: фатха (а) · касра (и) · дамма (у)",
+ forms:["отдельно","начало","середина","конец"],
+ vEy:"Бесплатные видеоуроки",vH:"Смотрите уроки на YouTube",vP:"Короткие уроки, которые удобно смотреть с открытой тетрадью. Новые видео каждую неделю на английском и французском.",
+ vids:[["Урок 1","Арабские буквы","Название, звук и написание каждой буквы."],["Урок 2","Краткие гласные","Фатха, касра и дамма: ваши первые слоги."],["Урок 3","Солнечные и лунные буквы","Когда «л» в «аль-» произносится, а когда исчезает."],["Уроки 1–3","Повторение: уроки 1–3","Одно видео с первыми тремя уроками."]],
+ bEy:"Рабочая тетрадь",bH:"Одна тетрадь по арабскому на 11 языках",bP:"Все объяснения на вашем языке — учите арабский без английского. PDF для печати, мгновенная загрузка.",
+ all:"Все",edMeta:"Учим арабский · тетрадь PDF для печати",
+ frEy:"Бесплатные страницы",frH:"Попробуйте перед покупкой",frP:"Скачайте бесплатно настоящие страницы тетради. Распечатайте, позанимайтесь и решите, подходит ли вам метод.",
+ free:[["Прописи арабских букв","Обводите каждую букву по стрелкам."],["Упражнения на краткие гласные","Читайте и пишите первые слоги."],["Исламские выражения на каждый день","Частые фразы с переводом и произношением."],["Бесплатный образец на вашем языке","У каждого из 10 переводных изданий есть свой бесплатный образец."]],
+ dl:"Скачать бесплатно →",pick:"Выбрать язык →",
+ sEy:"Как это работает",sH:"От нуля до чтения за три шага",
+ s1h:"Посмотрите бесплатный урок",s1p:"Каждое видео — небольшой шаг: буквы, гласные, затем слова.",
+ s2h:"Тренируйтесь на бумаге",s2p:"Распечатайте нужные страницы и пишите вместе с уроком.",
+ s3h:"Двигайтесь в своём темпе",s3p:"Полная тетрадь проведёт вас через все 28 букв и первые слова.",
+ foot:"Тетради Adil.B · © 2026 Arabic Orbit",shop:"Магазин"},
+id:{label:"Indonesia",soundLabel:"Bunyi",
+ nav1:"Alfabet",nav2:"Video gratis",nav3:"Buku",nav4:"Halaman gratis",
+ tag:"Bahasa Arab untuk semua, di mana saja",
+ h1:"Membaca dan menulis Arab <span>mulai dari huruf pertama.</span>",
+ heroP:"Video pelajaran gratis, halaman contoh gratis, dan buku latihan bahasa Arab yang bisa dicetak, langkah demi langkah, dalam bahasa Anda. Dibuat oleh seorang guru untuk pemula.",
+ cta1:"Pilih bahasa Anda",cta2:"Unduh halaman gratis",
+ f1:"bahasa",f2:"huruf, langkah demi langkah",f3:"PDF siap cetak",
+ bookS:"Buku latihan siap cetak · PDF",bookT:"Belajar Bahasa Arab",bookBy:"oleh Adil.B · Arabic Orbit",
+ lEy:"Pelajaran mini gratis",lH:"Ketuk sebuah huruf untuk melihat empat bentuknya",
+ lP:"Bahasa Arab ditulis dari kanan ke kiri, dan sebagian besar huruf berubah bentuk sesuai posisinya dalam kata. Ini pelajaran pertama dalam buku.",
+ vKey:"dengan harakat pendek: fathah (a) · kasrah (i) · dammah (u)",
+ forms:["sendiri","awal","tengah","akhir"],
+ vEy:"Video pelajaran gratis",vH:"Tonton pelajarannya di YouTube",vP:"Pelajaran singkat untuk diikuti sambil membuka buku. Video baru setiap minggu dalam bahasa Inggris dan Prancis.",
+ vids:[["Pelajaran 1","Huruf-huruf Arab","Nama, bunyi, dan cara menulis setiap huruf."],["Pelajaran 2","Harakat pendek","Fathah, kasrah, dan dammah: suku kata pertama Anda."],["Pelajaran 3","Huruf syamsiah dan qamariah","Kapan «l» pada «al-» dibaca dan kapan hilang."],["Pelajaran 1–3","Ulasan: pelajaran 1–3","Satu video yang merangkum tiga pelajaran pertama."]],
+ bEy:"Buku latihan",bH:"Satu buku bahasa Arab, dalam 11 bahasa",bP:"Semua penjelasan dalam bahasa Anda, jadi Anda belajar bahasa Arab tanpa perlu bahasa Inggris. PDF siap cetak, unduh langsung.",
+ all:"Semua",edMeta:"Belajar Bahasa Arab · buku PDF siap cetak",
+ frEy:"Halaman gratis",frH:"Coba dulu sebelum membeli",frP:"Unduh gratis halaman asli dari buku. Cetak, berlatih, dan lihat apakah metodenya cocok untuk Anda.",
+ free:[["Lembar menebalkan huruf","Tebalkan setiap huruf mengikuti panah."],["Latihan harakat pendek","Baca dan tulis suku kata pertama Anda."],["Ungkapan Islami sehari-hari","Ungkapan umum dengan arti dan cara baca."],["Contoh gratis dalam bahasa Anda","Setiap dari 10 edisi terjemahan punya contoh gratis sendiri."]],
+ dl:"Unduh gratis →",pick:"Pilih bahasa saya →",
+ sEy:"Cara kerjanya",sH:"Dari nol sampai bisa membaca dalam tiga langkah",
+ s1h:"Tonton pelajaran gratis",s1p:"Setiap video satu langkah kecil: huruf, harakat, lalu kata.",
+ s2h:"Berlatih di kertas",s2p:"Cetak halaman buku yang sesuai dan ikut menulis.",
+ s3h:"Lanjutkan sesuai kecepatan Anda",s3p:"Buku lengkap membawa Anda melewati 28 huruf dan kata-kata pertama.",
+ foot:"Buku oleh Adil.B · © 2026 Arabic Orbit",shop:"Toko"},
+zh:{label:"中文",soundLabel:"发音",
+ nav1:"字母",nav2:"免费视频",nav3:"书籍",nav4:"免费页面",
+ tag:"人人可学的阿拉伯语",
+ h1:"<span>从第一个字母开始，</span>学会读写阿拉伯语。",
+ heroP:"免费视频课、免费试读页，以及用你的母语编写、循序渐进、可打印的阿拉伯语练习册。由教师编写，专为零基础学习者设计。",
+ cta1:"选择你的语言",cta2:"下载免费页面",
+ f1:"种语言",f2:"个字母，循序渐进",f3:"可打印 PDF",
+ bookS:"可打印练习册 · PDF",bookT:"学阿拉伯语",bookBy:"作者 Adil.B · Arabic Orbit",
+ lEy:"免费小课",lH:"点一个字母，看看它的四种写法",
+ lP:"阿拉伯语从右往左写，大多数字母会根据在单词中的位置改变形状。这是练习册的第一课。",
+ vKey:"加上短元音：开口符 (a) · 齐齿符 (i) · 合口符 (u)",
+ forms:["独立","词首","词中","词尾"],
+ vEy:"免费视频课",vH:"在 YouTube 观看课程",vP:"简短的课程，可以一边看一边使用练习册。每周更新英语和法语新视频。",
+ vids:[["第 1 课","阿拉伯字母","每个字母的名称、发音和写法。"],["第 2 课","短元音","开口符、齐齿符和合口符：你的第一批音节。"],["第 3 课","太阳字母和月亮字母","冠词 «al-» 里的 «l» 什么时候发音，什么时候不发音。"],["第 1–3 课","复习：第 1–3 课","一个视频回顾前三课。"]],
+ bEy:"练习册",bH:"一本阿拉伯语练习册，11 种语言版本",bP:"所有讲解都用你的母语，不需要懂英语也能学阿拉伯语。可打印 PDF，立即下载。",
+ all:"全部",edMeta:"学阿拉伯语 · 可打印 PDF 练习册",
+ frEy:"免费页面",frH:"先试再买",frP:"免费下载练习册里的真实页面。打印出来练一练，看看这个方法适不适合你。",
+ free:[["字母描红练习","沿着箭头描写每个字母。"],["短元音练习","读写你的第一批音节。"],["日常伊斯兰用语","常用短语，附含义和读音。"],["你的语言的免费试读","10 个翻译版本各有免费试读。"]],
+ dl:"免费下载 →",pick:"选择我的语言 →",
+ sEy:"学习方法",sH:"三步从零到会读",
+ s1h:"看一节免费课",s1p:"每个视频一小步：字母、元音，然后是单词。",
+ s2h:"在纸上练习",s2p:"打印对应的练习页，跟着一起写。",
+ s3h:"按自己的节奏前进",s3p:"完整练习册带你学完全部 28 个字母和第一批单词。",
+ foot:"练习册作者 Adil.B · © 2026 Arabic Orbit",shop:"商店"}
+};
+const GEN=["aa","b","t","th (think)","j","ḥ","kh","d","dh (this)","r","z","s","sh","ṣ","ḍ","ṭ","ẓ","ʿ","gh","f","q","k","l","m","n","h","w / uu","y / ii"];
+
+const L=[["ا","Alif",0],["ب","Bā'",1],["ت","Tā'",1],["ث","Thā'",1],["ج","Jīm",1],["ح","Ḥā'",1],["خ","Khā'",1],["د","Dāl",0],["ذ","Dhāl",0],["ر","Rā'",0],["ز","Zāy",0],["س","Sīn",1],["ش","Shīn",1],["ص","Ṣād",1],["ض","Ḍād",1],["ط","Ṭā'",1],["ظ","Ẓā'",1],["ع","ʿAyn",1],["غ","Ghayn",1],["ف","Fā'",1],["ق","Qāf",1],["ك","Kāf",1],["ل","Lām",1],["م","Mīm",1],["ن","Nūn",1],["ه","Hā'",1],["و","Wāw",0],["ي","Yā'",1]];
+const X={"en": ["Videos in English are coming soon.", "", "Free sample of the English edition", "A few real pages from the workbook, free to download and print.", "Also available in"], "fr": ["Les vidéos en français arrivent bientôt.", "", "Extrait gratuit de l'édition française", "Quelques vraies pages du cahier, à télécharger et imprimer gratuitement.", "Aussi disponible en"], "es": ["Los vídeos en español llegan pronto.", "Mientras tanto, mira las clases en inglés →", "Muestra gratis de la edición en español", "Algunas páginas reales del cuaderno, para descargar e imprimir gratis.", "También disponible en"], "pt": ["Os vídeos em português chegam em breve.", "Enquanto isso, veja as aulas em inglês →", "Amostra grátis da edição em português", "Algumas páginas reais do caderno, para baixar e imprimir grátis.", "Também disponível em"], "it": ["I video in italiano arrivano presto.", "Nel frattempo, guarda le lezioni in inglese →", "Campione gratuito dell'edizione italiana", "Alcune vere pagine del quaderno, da scaricare e stampare gratis.", "Disponibile anche in"], "de": ["Videos auf Deutsch folgen bald.", "Bis dahin: die Lektionen auf Englisch ansehen →", "Gratis-Probe der deutschen Ausgabe", "Echte Seiten aus dem Arbeitsheft, kostenlos zum Herunterladen und Ausdrucken.", "Auch erhältlich auf"], "nl": ["Video's in het Nederlands komen binnenkort.", "Bekijk ondertussen de lessen in het Engels →", "Gratis proef van de Nederlandse editie", "Een paar echte pagina's uit het werkboek, gratis te downloaden en te printen.", "Ook verkrijgbaar in"], "tr": ["Türkçe videolar çok yakında.", "Bu arada dersleri İngilizce izleyin →", "Türkçe baskının ücretsiz örneği", "Kitaptan birkaç gerçek sayfa; ücretsiz indirip yazdırın.", "Diğer diller"], "ru": ["Видео на русском скоро появятся.", "А пока смотрите уроки на английском →", "Бесплатный образец русского издания", "Несколько настоящих страниц тетради — скачайте и распечатайте бесплатно.", "Также доступно на"], "id": ["Video dalam bahasa Indonesia segera hadir.", "Sementara itu, tonton pelajaran dalam bahasa Inggris →", "Contoh gratis edisi Bahasa Indonesia", "Beberapa halaman asli dari buku, gratis untuk diunduh dan dicetak.", "Juga tersedia dalam"], "zh": ["中文视频即将推出。", "在此之前，先看英语课程 →", "中文版免费试读", "练习册中的几页真实内容，可免费下载打印。", "其他语言版本"]};
+const CODE={en:"EN",fr:"FR",es:"ES",pt:"PT",it:"IT",de:"DE",nl:"NL",tr:"TR",ru:"RU",id:"ID",zh:"ZH"};
+/* Video links per language. Replace each search link with the real YouTube video link. A language with no list shows "coming soon". */
+const FREE=[["ا ب ت","https://payhip.com/b/r1TW7"],["بَ بِ بُ","https://payhip.com/b/5m8NZ"],["بِسْمِ ٱللَّٰه","https://payhip.com/b/6sy1M"],["١١","#books"]];
+const play='<span class="play"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M3 1l10 6-10 6z" fill="#fff"/></svg></span>';
+const Z="‍",$=id=>document.getElementById(id);
+let lang="en",cur=1;
+
+
+const ARN=["ألف","باء","تاء","ثاء","جيم","حاء","خاء","دال","ذال","راء","زاي","سين","شين","صاد","ضاد","طاء","ظاء","عين","غين","فاء","قاف","كاف","لام","ميم","نون","هاء","واو","ياء"];
+const LAT=["ʾ","b","t","th","j","ḥ","kh","d","dh","r","z","s","sh","ṣ","ḍ","ṭ","ẓ","ʿ","gh","f","q","k","l","m","n","h","w","y"];
+const SL={
+en:["Hear the name","Short vowels","Long vowels","Tanween","No Arabic voice was found on this device. Try Chrome, or add an Arabic voice in your phone settings."],
+fr:["Écouter le nom","Voyelles courtes","Voyelles longues","Tanwîn","Aucune voix arabe sur cet appareil. Essayez Chrome ou ajoutez une voix arabe dans les réglages."],
+es:["Escuchar el nombre","Vocales cortas","Vocales largas","Tanwín","No hay voz árabe en este dispositivo. Prueba Chrome o añade una voz árabe en los ajustes."],
+pt:["Ouvir o nome","Vogais curtas","Vogais longas","Tanwin","Não há voz árabe neste aparelho. Tente o Chrome ou adicione uma voz árabe nas configurações."],
+it:["Ascolta il nome","Vocali brevi","Vocali lunghe","Tanwīn","Nessuna voce araba su questo dispositivo. Prova Chrome o aggiungi una voce araba nelle impostazioni."],
+de:["Namen anhören","Kurze Vokale","Lange Vokale","Tanwīn","Auf diesem Gerät gibt es keine arabische Stimme. Versuche Chrome oder füge in den Einstellungen eine arabische Stimme hinzu."],
+nl:["Naam beluisteren","Korte klinkers","Lange klinkers","Tanwien","Geen Arabische stem op dit apparaat. Probeer Chrome of voeg een Arabische stem toe in de instellingen."],
+tr:["Adını dinle","Kısa ünlüler","Uzun ünlüler","Tenvin","Bu cihazda Arapça ses yok. Chrome'u deneyin veya ayarlardan Arapça ses ekleyin."],
+ru:["Послушать название","Краткие гласные","Долгие гласные","Танвин","На этом устройстве нет арабского голоса. Попробуйте Chrome или добавьте арабский голос в настройках."],
+id:["Dengarkan nama","Harakat pendek","Mad (vokal panjang)","Tanwin","Tidak ada suara Arab di perangkat ini. Coba Chrome atau tambahkan suara Arab di pengaturan."],
+zh:["听字母名称","短元音","长元音","鼻音符","此设备没有阿拉伯语语音。请试试 Chrome，或在设置中添加阿拉伯语语音。"]};
+let arVoice=null;
+function pickVoice(){try{const vs=speechSynthesis.getVoices();arVoice=vs.find(v=>/^ar(-|_|$)/i.test(v.lang)&&/google/i.test(v.name))||vs.find(v=>/^ar/i.test(v.lang))||null}catch(e){}}
+try{pickVoice();speechSynthesis.onvoiceschanged=pickVoice}catch(e){}
+function say(text,el){
+  if(el){el.classList.remove("playing");void el.offsetWidth;el.classList.add("playing")}
+  try{
+    if(!("speechSynthesis" in window))throw 0;
+    pickVoice();speechSynthesis.cancel();
+    const u=new SpeechSynthesisUtterance(text);u.lang="ar-SA";u.rate=.75;if(arVoice)u.voice=arVoice;
+    let started=false;u.onstart=()=>{started=true;$("noVoice").hidden=true};
+    setTimeout(()=>{if(!started)$("noVoice").hidden=false},1800);
+    speechSynthesis.speak(u);
+  }catch(e){$("noVoice").hidden=false}
+}
+function syl(i){
+  const c=L[i][0],b=i===0?"أ":c,ib=i===0?"إ":c,l=LAT[i]==="ʾ"?"":LAT[i];
+  const sh=[[b+"َ",l+"a"],[ib+"ِ",l+"i"],[b+"ُ",l+"u"]];
+  const lo=[[i===0?"آ":c+"َا",l+"ā"],[ib+"ِي",l+"ī"],[b+"ُو",l+"ū"]];
+  const tn=[[i===0?"أً":c+"ًا",l+"an"],[ib+"ٍ",l+"in"],[b+"ٌ",l+"un"]];
+  return [sh,lo,tn];
+}
+function showLetter(i){
+  cur=i;const [c,n,j]=L[i],t=T[lang];
+  $("dBig").textContent=c;$("dName").textContent=n;$("dSound").textContent=t.sound?t.sound[i]:t.soundLabel+": "+GEN[i];
+  const f=[c,j?c+Z:c,Z+c+(j?Z:""),Z+c];
+  $("dForms").innerHTML=f.map((g,k)=>`<div><span class="g">${g}</span><small>${t.forms[k]}</small></div>`).join("");
+  const sl=SL[lang]||SL.en,groups=syl(i);
+  $("sayName").innerHTML=`<svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg> ${sl[0]} · <span class="ar">${ARN[i]}</span>`;
+  $("sayName").onclick=e=>say(ARN[i],e.currentTarget);$("dBig").onclick=e=>say(ARN[i],e.currentTarget);
+  $("noVoice").textContent=sl[4];
+  $("dSnd").innerHTML=groups.map((g,k)=>`<div><h4>${sl[k+1]}</h4><div class="row3">${g.map(([a,r])=>`<button type="button" data-say="${a}"><span class="g">${a}</span><small>${r}</small></button>`).join("")}</div></div>`).join("");
+  $("dSnd").querySelectorAll("button").forEach(btn=>btn.onclick=()=>say(btn.dataset.say,btn));
+  $("alpha").querySelectorAll("button").forEach((b,k)=>b.setAttribute("aria-pressed",k===i));
+}
+$("alpha").innerHTML="";L.forEach((l,i)=>{const b=document.createElement("button");b.type="button";b.id="letter-"+i;b.textContent=l[0];b.setAttribute("aria-label",l[1]);b.onclick=()=>{showLetter(i);say(ARN[i],b)};$("alpha").appendChild(b)});
+
+function renderEditions(){
+  const t=T[lang],x=X[lang],me=E.find(e=>e[0]===CODE[lang]);
+  $("eds").innerHTML=`<article class="feat"><div class="mini"><span class="ar">ض</span><b>${t.bookT}</b><small>${me[1]}</small></div><div class="fbody"><span class="code">${me[0]} · ${me[1]}</span><h3>${me[2]}</h3><p class="meta">${t.edMeta}</p><div class="price">${esc(PRICE)}</div><div class="row"><a class="btn btn-gold" href="${P+me[3]}" target="_blank" rel="noopener">${me[5]}</a><a class="btn btn-ghost" href="${P+me[4]}" target="_blank" rel="noopener">${me[6]}</a></div></div></article>`;
+  $("picker").innerHTML=`<span>${x[4]}:</span>`+E.filter(e=>e!==me).map(e=>`<a href="${P+e[3]}" target="_blank" rel="noopener">${e[1]}</a>`).join("");
+}
+
+/* ===== Juha stories. Arabic text is shared; translations per language. To add a story: add one entry to STORIES and its translation to each language in STR. ===== */
+const STR={
+en:{ui:["Juha stories","Laugh and learn with Juha","Juha is the most famous joker of Arab folk tales. Each story is short, fully vowelled, and comes with a translation. Read the Arabic first, then check the meaning.","Show translation","Hide translation","Moral","Story","Stories"],
+ s:[["Juha, his son and the donkey","Juha and his son went to the market with their donkey. Juha rode the donkey and his son walked. People said: “What a harsh father!” Juha got off and his son rode. People said: “A boy who does not respect his father!” They both rode. People said: “Poor donkey!” They both walked. People laughed: “They have a donkey and don’t ride it!” Juha told his son: “My son, you can never please everyone.”","You can never please everyone."],
+ ["Juha’s nail","Juha sold his house to a man with one condition: one nail in the wall stays his. The man agreed: “A small nail, no problem.” A few days later Juha came and hung an old robe on the nail. The next day he came to visit his nail and sat in the house. Then he came at night and slept under his nail! The man grew tired and left the house to Juha.","A small excuse can become a big problem."],
+ ["Eat, my sleeve!","Juha went to a feast in old clothes, and nobody paid attention to him. He went home and put on beautiful new clothes. He returned to the feast; people welcomed him and seated him in the best place. They served him food, and Juha held his sleeve to the food and said: “Eat, my sleeve, eat!” People were surprised. Juha said: “You honoured the clothes, not me!”","Respect people for who they are, not for their clothes."]]},
+fr:{ui:["Histoires de Joha","Rire et apprendre avec Joha","Joha est le farceur le plus célèbre des contes arabes. Chaque histoire est courte, entièrement vocalisée et accompagnée d'une traduction. Lisez d'abord l'arabe, puis vérifiez le sens.","Voir la traduction","Masquer la traduction","Morale","Histoire","Histoires"],
+ s:[["Joha, son fils et l'âne","Joha et son fils allèrent au marché avec leur âne. Joha monta sur l'âne et son fils marcha. Les gens dirent : « Quel père dur ! » Joha descendit et son fils monta. Les gens dirent : « Un fils qui ne respecte pas son père ! » Ils montèrent tous les deux. Les gens dirent : « Pauvre âne ! » Ils marchèrent tous les deux. Les gens rirent : « Ils ont un âne et ne le montent pas ! » Joha dit à son fils : « Mon fils, on ne peut jamais plaire à tout le monde. »","On ne peut pas plaire à tout le monde."],
+ ["Le clou de Joha","Joha vendit sa maison à un homme, à une condition : un clou dans le mur reste à lui. L'homme accepta : « Un petit clou, pas de problème. » Quelques jours plus tard, Joha vint accrocher un vieux manteau au clou. Le lendemain, il vint rendre visite à son clou et s'assit dans la maison. Puis il vint la nuit et dormit sous son clou ! L'homme, épuisé, laissa la maison à Joha.","Un petit prétexte peut devenir un grand problème."],
+ ["Mange, ma manche !","Joha alla à un festin en vieux habits, et personne ne fit attention à lui. Il rentra chez lui et mit de beaux habits neufs. Il revint au festin : on l'accueillit et on l'installa à la meilleure place. On lui servit à manger ; Joha approcha sa manche du plat et dit : « Mange, ma manche, mange ! » Les gens s'étonnèrent. Joha dit : « C'est mes habits que vous avez honorés, pas moi ! »","Respectez les gens pour ce qu'ils sont, pas pour leurs habits."]]},
+es:{ui:["Cuentos de Yuha","Ríe y aprende con Yuha","Yuha es el bromista más famoso de los cuentos árabes. Cada cuento es corto, con todas las vocales y con traducción. Lee primero el árabe y luego comprueba el significado.","Ver traducción","Ocultar traducción","Moraleja","Cuento","Cuentos"],
+ s:[["Yuha, su hijo y el burro","Yuha y su hijo fueron al mercado con su burro. Yuha montó el burro y su hijo caminó. La gente dijo: «¡Qué padre tan duro!». Yuha bajó y montó su hijo. La gente dijo: «¡Un hijo que no respeta a su padre!». Montaron los dos. La gente dijo: «¡Pobre burro!». Caminaron los dos. La gente se rio: «¡Tienen un burro y no lo montan!». Yuha le dijo a su hijo: «Hijo mío, nunca se puede contentar a todos».","Nunca se puede contentar a todos."],
+ ["El clavo de Yuha","Yuha vendió su casa a un hombre con una condición: un clavo de la pared seguiría siendo suyo. El hombre aceptó: «Un clavo pequeño, no pasa nada». Días después, Yuha vino y colgó una túnica vieja en el clavo. Al día siguiente vino a visitar su clavo y se sentó en la casa. ¡Luego vino de noche y durmió bajo su clavo! El hombre, cansado, le dejó la casa a Yuha.","Una pequeña excusa puede convertirse en un gran problema."],
+ ["¡Come, manga mía!","Yuha fue a un banquete con ropa vieja y nadie le hizo caso. Volvió a casa y se puso ropa nueva y bonita. Regresó al banquete: lo recibieron y lo sentaron en el mejor sitio. Le sirvieron comida y Yuha acercó su manga al plato diciendo: «¡Come, manga mía, come!». La gente se sorprendió. Yuha dijo: «¡Ustedes honraron la ropa, no a mí!».","Respeta a las personas por lo que son, no por su ropa."]]},
+pt:{ui:["Histórias de Juha","Ria e aprenda com Juha","Juha é o brincalhão mais famoso dos contos árabes. Cada história é curta, com todas as vogais e com tradução. Leia primeiro o árabe e depois confira o sentido.","Ver tradução","Ocultar tradução","Moral","História","Histórias"],
+ s:[["Juha, o filho e o burro","Juha e o filho foram ao mercado com o burro. Juha montou o burro e o filho foi a pé. As pessoas disseram: «Que pai cruel!» Juha desceu e o filho montou. As pessoas disseram: «Um filho que não respeita o pai!» Montaram os dois. As pessoas disseram: «Coitado do burro!» Foram os dois a pé. As pessoas riram: «Têm um burro e não montam nele!» Juha disse ao filho: «Meu filho, nunca se consegue agradar a todos.»","Nunca se consegue agradar a todos."],
+ ["O prego de Juha","Juha vendeu a casa a um homem com uma condição: um prego na parede continuaria sendo dele. O homem aceitou: «Um preguinho, tudo bem.» Dias depois, Juha veio e pendurou uma túnica velha no prego. No dia seguinte, veio visitar o prego e sentou-se na casa. Depois veio à noite e dormiu debaixo do prego! O homem, cansado, deixou a casa para Juha.","Uma pequena desculpa pode virar um grande problema."],
+ ["Come, minha manga!","Juha foi a um banquete com roupas velhas e ninguém lhe deu atenção. Voltou para casa e vestiu roupas novas e bonitas. Voltou ao banquete: receberam-no bem e sentaram-no no melhor lugar. Serviram-lhe comida, e Juha aproximou a manga do prato dizendo: «Come, minha manga, come!» As pessoas estranharam. Juha disse: «Vocês honraram as roupas, não a mim!»","Respeite as pessoas pelo que são, não pelas roupas."]]},
+it:{ui:["Storie di Giufà","Ridi e impara con Giufà","Giufà (Juha) è il burlone più famoso delle fiabe arabe. Ogni storia è breve, completamente vocalizzata e tradotta. Leggi prima l'arabo, poi controlla il significato.","Mostra traduzione","Nascondi traduzione","Morale","Storia","Storie"],
+ s:[["Giufà, suo figlio e l'asino","Giufà e suo figlio andarono al mercato con l'asino. Giufà salì sull'asino e il figlio camminava. La gente disse: «Che padre crudele!» Giufà scese e salì il figlio. La gente disse: «Un figlio che non rispetta il padre!» Salirono tutti e due. La gente disse: «Povero asino!» Camminarono tutti e due. La gente rise: «Hanno un asino e non ci salgono!» Giufà disse al figlio: «Figlio mio, non si può mai accontentare tutti.»","Non si può accontentare tutti."],
+ ["Il chiodo di Giufà","Giufà vendette la casa a un uomo a una condizione: un chiodo nel muro restava suo. L'uomo accettò: «Un chiodino, va bene.» Qualche giorno dopo Giufà venne e appese al chiodo una vecchia tunica. Il giorno dopo venne a trovare il suo chiodo e si sedette in casa. Poi venne di notte e dormì sotto il suo chiodo! L'uomo, stanco, lasciò la casa a Giufà.","Una piccola scusa può diventare un grande problema."],
+ ["Mangia, manica mia!","Giufà andò a un banchetto con vestiti vecchi e nessuno gli badò. Tornò a casa e indossò vestiti nuovi e belli. Tornò al banchetto: lo accolsero e lo fecero sedere al posto migliore. Gli servirono da mangiare e Giufà avvicinò la manica al piatto dicendo: «Mangia, manica mia, mangia!» La gente si stupì. Giufà disse: «Avete onorato i vestiti, non me!»","Rispetta le persone per ciò che sono, non per i vestiti."]]},
+de:{ui:["Dschuha-Geschichten","Lachen und lernen mit Dschuha","Dschuha ist der berühmteste Spaßvogel der arabischen Volksmärchen. Jede Geschichte ist kurz, voll vokalisiert und übersetzt. Lies zuerst das Arabische und prüfe dann die Bedeutung.","Übersetzung zeigen","Übersetzung ausblenden","Moral","Geschichte","Geschichten"],
+ s:[["Dschuha, sein Sohn und der Esel","Dschuha und sein Sohn gingen mit ihrem Esel zum Markt. Dschuha ritt, der Sohn ging zu Fuß. Die Leute sagten: „Was für ein harter Vater!“ Dschuha stieg ab und der Sohn ritt. Die Leute sagten: „Ein Sohn, der seinen Vater nicht achtet!“ Beide ritten. Die Leute sagten: „Armer Esel!“ Beide gingen zu Fuß. Die Leute lachten: „Sie haben einen Esel und reiten nicht!“ Dschuha sagte zu seinem Sohn: „Mein Sohn, man kann es nie allen recht machen.“","Man kann es nie allen recht machen."],
+ ["Dschuhas Nagel","Dschuha verkaufte sein Haus unter einer Bedingung: Ein Nagel in der Wand bleibt seiner. Der Käufer stimmte zu: „Ein kleiner Nagel, kein Problem.“ Ein paar Tage später hängte Dschuha einen alten Mantel an den Nagel. Am nächsten Tag besuchte er seinen Nagel und setzte sich ins Haus. Dann kam er nachts und schlief unter seinem Nagel! Der Mann war es leid und überließ Dschuha das Haus.","Ein kleiner Vorwand kann zu einem großen Problem werden."],
+ ["Iss, mein Ärmel!","Dschuha ging in alten Kleidern zu einem Festmahl, und niemand beachtete ihn. Er ging nach Hause und zog schöne neue Kleider an. Als er zurückkam, begrüßte man ihn und setzte ihn auf den besten Platz. Man servierte ihm Essen, und Dschuha hielt seinen Ärmel ans Essen: „Iss, mein Ärmel, iss!“ Die Leute staunten. Dschuha sagte: „Ihr habt die Kleider geehrt, nicht mich!“","Achte Menschen für das, was sie sind, nicht für ihre Kleidung."]]},
+nl:{ui:["Verhalen van Djoeha","Lachen en leren met Djoeha","Djoeha is de bekendste grappenmaker uit de Arabische volksverhalen. Elk verhaal is kort, volledig gevocaliseerd en vertaald. Lees eerst het Arabisch en controleer daarna de betekenis.","Vertaling tonen","Vertaling verbergen","Moraal","Verhaal","Verhalen"],
+ s:[["Djoeha, zijn zoon en de ezel","Djoeha en zijn zoon gingen met hun ezel naar de markt. Djoeha reed en zijn zoon liep. De mensen zeiden: „Wat een harde vader!” Djoeha stapte af en zijn zoon reed. De mensen zeiden: „Een zoon die zijn vader niet respecteert!” Ze reden samen. De mensen zeiden: „Arme ezel!” Ze liepen samen. De mensen lachten: „Ze hebben een ezel en rijden er niet op!” Djoeha zei tegen zijn zoon: „Mijn zoon, je kunt het nooit iedereen naar de zin maken.”","Je kunt het nooit iedereen naar de zin maken."],
+ ["De spijker van Djoeha","Djoeha verkocht zijn huis op één voorwaarde: één spijker in de muur bleef van hem. De koper stemde in: „Een klein spijkertje, geen probleem.” Een paar dagen later hing Djoeha een oude mantel aan de spijker. De volgende dag kwam hij zijn spijker bezoeken en ging in het huis zitten. Toen kwam hij ’s nachts en sliep onder zijn spijker! De man had er genoeg van en liet het huis aan Djoeha.","Een klein excuus kan een groot probleem worden."],
+ ["Eet, mijn mouw!","Djoeha ging in oude kleren naar een feestmaal en niemand lette op hem. Hij ging naar huis en trok mooie nieuwe kleren aan. Toen hij terugkwam, werd hij hartelijk ontvangen en op de beste plek gezet. Men bracht hem eten en Djoeha hield zijn mouw bij het eten: „Eet, mijn mouw, eet!” De mensen keken verbaasd. Djoeha zei: „Jullie eerden mijn kleren, niet mij!”","Respecteer mensen om wie ze zijn, niet om hun kleren."]]},
+tr:{ui:["Cuha (Nasreddin Hoca) hikâyeleri","Cuha ile gül ve öğren","Cuha, Arap halk hikâyelerinin en ünlü şakacısıdır; Türkiye'de Nasreddin Hoca olarak bilinir. Her hikâye kısa, tamamen harekeli ve çevirilidir. Önce Arapçasını okuyun, sonra anlamına bakın.","Çeviriyi göster","Çeviriyi gizle","Ders","Hikâye","Hikâyeler"],
+ s:[["Cuha, oğlu ve eşek","Cuha ile oğlu eşekleriyle pazara gittiler. Cuha eşeğe bindi, oğlu yürüdü. İnsanlar dedi ki: “Ne katı bir baba!” Cuha indi, oğlu bindi. İnsanlar dedi ki: “Babasına saygısı olmayan bir çocuk!” İkisi birlikte bindiler. İnsanlar dedi ki: “Zavallı eşek!” İkisi birlikte yürüdüler. İnsanlar güldü: “Eşekleri var ama binmiyorlar!” Cuha oğluna dedi ki: “Oğlum, herkesi memnun etmek imkânsızdır.”","Herkesi memnun etmek imkânsızdır."],
+ ["Cuha'nın çivisi","Cuha evini bir adama tek bir şartla sattı: duvardaki bir çivi onun kalacaktı. Adam kabul etti: “Küçük bir çivi, sorun değil.” Birkaç gün sonra Cuha gelip çiviye eski bir cübbe astı. Ertesi gün çivisini ziyarete gelip evde oturdu. Sonra gece gelip çivisinin altında uyudu! Adam bıktı ve evi Cuha'ya bıraktı.","Küçük bir bahane büyük bir soruna dönüşebilir."],
+ ["Ye kürküm ye!","Cuha bir ziyafete eski elbiselerle gitti ve kimse ona ilgi göstermedi. Eve dönüp güzel, yeni elbiseler giydi. Ziyafete geri döndüğünde onu karşıladılar ve en iyi yere oturttular. Önüne yemek koydular; Cuha kürkünün yenini yemeğe yaklaştırıp dedi ki: “Ye kürküm, ye!” İnsanlar şaşırdı. Cuha dedi ki: “Siz bana değil, elbiselerime ikram ettiniz!”","İnsanlara kıyafetlerine göre değil, kim olduklarına göre değer verin."]]},
+ru:{ui:["Истории о Джухе","Смейтесь и учитесь с Джухой","Джуха — самый известный шутник арабских сказок (его также знают как Ходжу Насреддина). Каждая история короткая, полностью огласованная и с переводом. Сначала прочитайте по-арабски, затем проверьте смысл.","Показать перевод","Скрыть перевод","Мораль","История","Истории"],
+ s:[["Джуха, его сын и осёл","Джуха с сыном пошли на рынок со своим ослом. Джуха ехал на осле, а сын шёл пешком. Люди сказали: «Какой жестокий отец!» Джуха слез, и сел сын. Люди сказали: «Сын, который не уважает отца!» Они сели вдвоём. Люди сказали: «Бедный осёл!» Они пошли пешком вдвоём. Люди засмеялись: «У них есть осёл, а они не едут!» Джуха сказал сыну: «Сынок, на всех не угодишь».","На всех не угодишь."],
+ ["Гвоздь Джухи","Джуха продал дом одному человеку с одним условием: гвоздь в стене останется его. Человек согласился: «Маленький гвоздь — не страшно». Через несколько дней Джуха пришёл и повесил на гвоздь старый халат. На следующий день он пришёл навестить свой гвоздь и уселся в доме. А потом пришёл ночью и уснул под своим гвоздём! Хозяин устал и оставил дом Джухе.","Маленький предлог может стать большой проблемой."],
+ ["Ешь, мой рукав!","Джуха пришёл на пир в старой одежде, и никто не обратил на него внимания. Он вернулся домой и надел красивую новую одежду. Когда он вернулся, его встретили и усадили на лучшее место. Ему подали еду, а Джуха поднёс рукав к блюду и сказал: «Ешь, мой рукав, ешь!» Люди удивились. Джуха сказал: «Вы почтили одежду, а не меня!»","Уважайте людей за то, кто они, а не за их одежду."]]},
+id:{ui:["Kisah Juha","Tertawa dan belajar bersama Juha","Juha adalah tokoh jenaka paling terkenal dalam cerita rakyat Arab. Setiap kisah pendek, berharakat lengkap, dan ada terjemahannya. Baca dulu bahasa Arabnya, lalu cek artinya.","Lihat terjemahan","Sembunyikan terjemahan","Hikmah","Kisah","Kisah"],
+ s:[["Juha, anaknya, dan keledai","Juha dan anaknya pergi ke pasar bersama keledai mereka. Juha menunggang keledai dan anaknya berjalan. Orang-orang berkata: “Ayah yang kejam!” Juha turun dan anaknya naik. Orang-orang berkata: “Anak yang tidak menghormati ayahnya!” Mereka naik berdua. Orang-orang berkata: “Kasihan keledainya!” Mereka berjalan berdua. Orang-orang tertawa: “Punya keledai tapi tidak dinaiki!” Juha berkata kepada anaknya: “Anakku, kita tidak akan pernah bisa menyenangkan semua orang.”","Kita tidak bisa menyenangkan semua orang."],
+ ["Paku Juha","Juha menjual rumahnya kepada seorang laki-laki dengan satu syarat: satu paku di dinding tetap miliknya. Laki-laki itu setuju: “Paku kecil, tidak apa-apa.” Beberapa hari kemudian Juha datang dan menggantungkan jubah tua di paku itu. Besoknya ia datang menjenguk pakunya dan duduk di rumah. Lalu ia datang malam hari dan tidur di bawah pakunya! Laki-laki itu lelah dan menyerahkan rumah itu kepada Juha.","Alasan kecil bisa menjadi masalah besar."],
+ ["Makanlah, wahai lengan bajuku!","Juha datang ke jamuan dengan pakaian lusuh, dan tidak ada yang memedulikannya. Ia pulang dan memakai pakaian baru yang indah. Ia kembali ke jamuan; orang-orang menyambutnya dan mendudukkannya di tempat terbaik. Mereka menghidangkan makanan, lalu Juha mendekatkan lengan bajunya ke makanan sambil berkata: “Makanlah, lengan bajuku, makanlah!” Orang-orang heran. Juha berkata: “Kalian memuliakan pakaianku, bukan aku!”","Hargailah orang karena dirinya, bukan karena pakaiannya."]]},
+zh:{ui:["朱哈的故事","跟朱哈一起笑着学","朱哈是阿拉伯民间故事中最有名的幽默人物。每个故事都很短，全部标注元音，并附有翻译。先读阿拉伯语，再看意思。","显示翻译","隐藏翻译","寓意","故事","故事"],
+ s:[["朱哈、儿子和驴","朱哈和儿子牵着驴去集市。朱哈骑驴，儿子走路。人们说：“多么狠心的父亲！”朱哈下来，儿子骑上去。人们说：“不尊敬父亲的孩子！”两人一起骑。人们说：“可怜的驴！”两人一起走。人们笑道：“有驴却不骑！”朱哈对儿子说：“孩子，你永远无法让所有人满意。”","你无法让所有人满意。"],
+ ["朱哈的钉子","朱哈把房子卖给一个人，只提了一个条件：墙上的一颗钉子仍归他所有。那人同意了：“一颗小钉子，没关系。”几天后，朱哈来把一件旧袍子挂在钉子上。第二天，他来“看望”他的钉子，在屋里坐着。后来他夜里也来，睡在钉子下面！那人受不了，把房子让给了朱哈。","一个小借口可能变成大麻烦。"],
+ ["吃吧，我的袖子！","朱哈穿着旧衣服去赴宴，没有人理他。他回家换上漂亮的新衣服。再回到宴会时，人们热情欢迎他，请他坐在最好的位置。饭菜端上来，朱哈把袖子凑近饭菜说：“吃吧，我的袖子，吃吧！”大家很惊讶。朱哈说：“你们尊重的是衣服，不是我！”","尊重一个人要看他本人，而不是他的衣服。"]]}
+};
+
+const DATA=JSON.parse(document.getElementById("site-data").textContent);
+const SET=DATA.settings||{},PRICE=SET.price||"",VIDEOS=DATA.videos||{},P="";
+const esc=t=>String(t==null?"":t).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/"/g,"&quot;");
+const E=(DATA.books||[]).map(b=>[esc(b.code),esc(b.language),esc(b.edition_title),b.buy_url,b.sample_url,esc(b.buy_label),esc(b.sample_label)]);
+const STORIES=(DATA.stories||[]).map(s=>({ar:esc(s.title_ar),glyph:esc(s.glyph),image:(s.image||"").replace(/^\//,""),text:String(s.text_ar||"").split(/\n+/).map(x=>esc(x.trim())).filter(Boolean)}));
+for(const k in STR){STR[k].s=(DATA.stories||[]).map(s=>{const tr=s.translations||{},t=(tr[k]&&tr[k].title)?tr[k]:(tr.en||{});return[esc(t.title),esc(t.text),esc(t.moral)]});}
+const IMGB=(()=>{const m=document.querySelector('meta[name="page-lang"]');return m?m.dataset.base:"./"})();
+function renderStories(){
+  const S=STR[lang]||STR.en,u=S.ui;
+  $("stEy").textContent=u[0];$("stH").textContent=u[1];$("stP").textContent=u[2];$("navSt").textContent=u[7];
+  $("storyList").innerHTML=STORIES.map((s,i)=>`<article class="story"><div class="st-img">${s.image?`<img src="${IMGB}${s.image}" alt="${S.s[i][0]}" width="720" height="960" loading="lazy" decoding="async">`:`<div class="st-ph" aria-hidden="true"><span>${s.glyph}</span></div>`}</div><div class="st-head"><span class="st-num">${u[6]} ${i+1}</span><h3 class="st-ar" lang="ar" dir="rtl">${s.ar}</h3><p class="st-title">${S.s[i][0]}</p></div><div class="st-text" lang="ar" dir="rtl">${s.text.map(x=>`<p>${x}</p>`).join("")}</div><button type="button" class="st-tog" id="st-tog-${i}" aria-expanded="false">${u[3]}</button><div class="st-tr" id="st-tr-${i}" hidden><p>${S.s[i][1]}</p></div><p class="st-moral"><b>${u[5]}:</b> ${S.s[i][2]}</p></article>`).join("");
+  $("storyList").querySelectorAll(".st-tog").forEach((b,i)=>b.onclick=()=>{const tr=$("st-tr-"+i),open=tr.hidden;tr.hidden=!open;b.setAttribute("aria-expanded",open);b.textContent=open?u[4]:u[3]});
+}
+function setLang(l){
+  lang=T[l]?l:"en";const t=T[lang];
+  document.documentElement.lang=lang;
+  document.querySelectorAll("[data-i18n]").forEach(el=>{const v=t[el.dataset.i18n];if(v!=null)el.innerHTML=v});
+  const vl=(VIDEOS[lang]||[]).filter(v=>v&&v.url);
+  $("vids").innerHTML=vl.length?vl.map(v=>`<a class="vid" href="${esc(v.url)}" target="_blank" rel="noopener"><div class="thumb"><span class="dur">${esc(v.label)}</span><span class="ar">${esc(v.glyph)}</span>${play}</div><h3>${esc(v.title)}</h3><p>${esc(v.description)}</p></a>`).join(""):`<div class="soon"><span class="ar">قريبًا</span><p>${X[lang][0]}</p><a class="btn btn-ghost" href="${esc(SET.videos_fallback||SET.youtube||"#")}" target="_blank" rel="noopener">${X[lang][1]}</a></div>`;
+  if(lang==="en"){$("freeList").innerHTML=t.free.slice(0,3).map((f,i)=>`<a class="fr" href="${FREE[i][1]}" target="_blank" rel="noopener"><span class="ar">${FREE[i][0]}</span><h3>${f[0]}</h3><p>${f[1]}</p><span class="go">${t.dl}</span></a>`).join("")}
+  else{const me=E.find(e=>e[0]===CODE[lang]);$("freeList").innerHTML=`<a class="fr fr-wide" href="${P+me[4]}" target="_blank" rel="noopener"><span class="ar">ا ب ت</span><div><h3>${X[lang][2]}</h3><p>${X[lang][3]}</p><span class="go">${t.dl}</span></div></a>`}
+  $("langSel").value=lang;
+  renderEditions();renderStories();showLetter(cur);
+  try{localStorage.setItem("lah-lang",lang)}catch(e){}
+}
+const PM=document.querySelector('meta[name="page-lang"]'),PAGE=PM&&PM.content,BASE=PM?PM.dataset.base:"./";
+$("langSel").innerHTML="";Object.keys(T).forEach(k=>{const o=document.createElement("option");o.value=k;o.textContent=T[k].label==="EN"?"English":T[k].label==="FR"?"Français":T[k].label;$("langSel").appendChild(o)});
+$("langSel").onchange=e=>{const v=e.target.value;if(PAGE){try{localStorage.setItem("lah-lang",v)}catch(_){}location.href=BASE+(v==="en"?"index.html":v+"/index.html")}else setLang(v)};
+
+let start="en";
+const nav=(navigator.language||"en").slice(0,2).toLowerCase(),auto=T[nav]?nav:"en";
+start=auto;try{start=localStorage.getItem("lah-lang")||auto}catch(e){}
+if(PAGE)start=PAGE;
+setLang(start);
+</script>

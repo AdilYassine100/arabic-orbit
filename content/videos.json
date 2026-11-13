@@ -1,0 +1,99 @@
+{
+  "en": [
+    {
+      "label": "Lesson 1",
+      "title": "The Arabic letters",
+      "description": "Names, sounds and how to write each letter.",
+      "url": "https://www.youtube.com/shorts/BDCIkKceChY",
+      "glyph": "ا ب ت ث"
+    },
+    {
+      "label": "Lesson 2",
+      "title": "Short vowels",
+      "description": "Fatḥa, kasra and ḍamma: your first syllables.",
+      "url": "https://www.youtube.com/shorts/X9HRNU5vFTw",
+      "glyph": "بَ بِ بُ"
+    },
+    {
+      "label": "Lesson 3",
+      "title": "Sun and moon letters",
+      "description": "When the “l” of “al-” is pronounced, and when it disappears.",
+      "url": "https://www.youtube.com/shorts/HP_fB3_DInw",
+      "glyph": "الشَّمس القَمر"
+    },
+    {
+      "label": "Lessons 1–3",
+      "title": "Full review: lessons 1 to 3",
+      "description": "One video that brings the first three lessons together.",
+      "url": "https://www.youtube.com/watch?v=vz872kE6tMk",
+      "glyph": "تَعَلَّم"
+    },
+    {
+      "label": "Lesson 4",
+      "title": "Long vowels",
+      "description": "Alif, Waw and Yaa: how to stretch a sound.",
+      "url": "https://www.youtube.com/shorts/57j70JM1Z08",
+      "glyph": "بَا بِي بُو"
+    },
+    {
+      "label": "Lesson 5",
+      "title": "Sukun and Shadda",
+      "description": "The silent letter and the doubled letter.",
+      "url": "https://www.youtube.com/shorts/DcMXWgCnkTQ",
+      "glyph": "بْ بّ"
+    },
+    {
+      "label": "Lesson 6",
+      "title": "Tanween",
+      "description": "The endings -un, -an and -in.",
+      "url": "https://www.youtube.com/shorts/MACpAxb1yuc",
+      "glyph": "بٌ بٍ بً"
+    },
+    {
+      "label": "Lessons 4–6",
+      "title": "Full review: lessons 4 to 6",
+      "description": "Long vowels, sukun, shadda and tanween in one video.",
+      "url": "https://www.youtube.com/watch?v=Mp3UGof7LpE",
+      "glyph": "مُرَاجَعَة"
+    }
+  ],
+  "fr": [
+    {
+      "label": "Leçon 1",
+      "title": "Les lettres arabes",
+      "description": "Le nom, le son et l'écriture de chaque lettre.",
+      "url": "https://www.youtube.com/shorts/Vlg6gM1o04w",
+      "glyph": "ا ب ت ث"
+    },
+    {
+      "label": "Leçon 2",
+      "title": "Les voyelles courtes",
+      "description": "Fatḥa, kasra et ḍamma : vos premières syllabes.",
+      "url": "https://www.youtube.com/shorts/VQTAEgRhq28",
+      "glyph": "بَ بِ بُ"
+    },
+    {
+      "label": "Leçon 3",
+      "title": "Lettres solaires et lunaires",
+      "description": "Quand le « l » de « al- » se prononce, et quand il disparaît.",
+      "url": "https://www.youtube.com/shorts/ajdCU0AY9Mg",
+      "glyph": "الشَّمس القَمر"
+    },
+    {
+      "label": "Leçons 1–3",
+      "title": "Révision : leçons 1 à 3",
+      "description": "Une seule vidéo qui reprend les trois premières leçons.",
+      "url": "https://www.youtube.com/watch?v=j2Rj_T_NSiI",
+      "glyph": "تَعَلَّم"
+    }
+  ],
+  "es": [],
+  "pt": [],
+  "it": [],
+  "de": [],
+  "nl": [],
+  "tr": [],
+  "ru": [],
+  "id": [],
+  "zh": []
+}

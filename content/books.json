@@ -1,0 +1,101 @@
+[
+  {
+    "code": "EN",
+    "language": "English",
+    "edition_title": "English edition",
+    "buy_url": "https://payhip.com/b/R8UyH",
+    "sample_url": "https://payhip.com/b/r1TW7",
+    "buy_label": "Buy now",
+    "sample_label": "Free sample"
+  },
+  {
+    "code": "FR",
+    "language": "Français",
+    "edition_title": "Édition française",
+    "buy_url": "https://payhip.com/b/QEhBs",
+    "sample_url": "https://payhip.com/b/Zi7Ee",
+    "buy_label": "Acheter",
+    "sample_label": "Extrait gratuit"
+  },
+  {
+    "code": "ES",
+    "language": "Español",
+    "edition_title": "Edición en español",
+    "buy_url": "https://payhip.com/b/kXrie",
+    "sample_url": "https://payhip.com/b/rPxCU",
+    "buy_label": "Comprar",
+    "sample_label": "Muestra gratis"
+  },
+  {
+    "code": "PT",
+    "language": "Português",
+    "edition_title": "Edição em português",
+    "buy_url": "https://payhip.com/b/GQdmj",
+    "sample_url": "https://payhip.com/b/4UKJ8",
+    "buy_label": "Comprar",
+    "sample_label": "Amostra grátis"
+  },
+  {
+    "code": "IT",
+    "language": "Italiano",
+    "edition_title": "Edizione italiana",
+    "buy_url": "https://payhip.com/b/RED5T",
+    "sample_url": "https://payhip.com/b/CrfsI",
+    "buy_label": "Acquista",
+    "sample_label": "Campione gratuito"
+  },
+  {
+    "code": "DE",
+    "language": "Deutsch",
+    "edition_title": "Deutsche Ausgabe",
+    "buy_url": "https://payhip.com/b/eUVjT",
+    "sample_url": "https://payhip.com/b/mDEn4",
+    "buy_label": "Kaufen",
+    "sample_label": "Gratis-Probe"
+  },
+  {
+    "code": "NL",
+    "language": "Nederlands",
+    "edition_title": "Nederlandse editie",
+    "buy_url": "https://payhip.com/b/7kDG5",
+    "sample_url": "https://payhip.com/b/JDLwe",
+    "buy_label": "Kopen",
+    "sample_label": "Gratis proef"
+  },
+  {
+    "code": "TR",
+    "language": "Türkçe",
+    "edition_title": "Türkçe baskı",
+    "buy_url": "https://payhip.com/b/Uwf9P",
+    "sample_url": "https://payhip.com/b/1lKc7",
+    "buy_label": "Satın al",
+    "sample_label": "Ücretsiz örnek"
+  },
+  {
+    "code": "RU",
+    "language": "Русский",
+    "edition_title": "Русское издание",
+    "buy_url": "https://payhip.com/b/y1iuD",
+    "sample_url": "https://payhip.com/b/TuUFV",
+    "buy_label": "Купить",
+    "sample_label": "Бесплатный образец"
+  },
+  {
+    "code": "ID",
+    "language": "Bahasa Indonesia",
+    "edition_title": "Edisi Bahasa Indonesia",
+    "buy_url": "https://payhip.com/b/QUJvD",
+    "sample_url": "https://payhip.com/b/cuS72",
+    "buy_label": "Beli",
+    "sample_label": "Sampel gratis"
+  },
+  {
+    "code": "ZH",
+    "language": "中文",
+    "edition_title": "中文版",
+    "buy_url": "https://payhip.com/b/lO3tx",
+    "sample_url": "https://payhip.com/b/yuva8",
+    "buy_label": "购买",
+    "sample_label": "免费试读"
+  }
+]

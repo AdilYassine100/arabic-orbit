@@ -1,0 +1,68 @@
+{
+  "en": {
+    "title": "Learn Arabic for Beginners – Free Lessons, Stories & Printable Workbook | Arabic Orbit",
+    "description": "Learn to read and write Arabic from zero: talking alphabet, free video lessons, Juha stories with translation and a printable Arabic workbook in 11 languages.",
+    "language_name": "English",
+    "locale": "en_US"
+  },
+  "fr": {
+    "title": "Apprendre l'arabe pour débutants – Leçons gratuites, histoires et cahier imprimable | Arabic Orbit",
+    "description": "Apprenez à lire et écrire l'arabe en partant de zéro : alphabet sonore, leçons vidéo gratuites, histoires de Joha traduites et cahier d'arabe imprimable en français.",
+    "language_name": "Français",
+    "locale": "fr_FR"
+  },
+  "es": {
+    "title": "Aprender árabe para principiantes – Clases gratis, cuentos y cuaderno imprimible | Arabic Orbit",
+    "description": "Aprende a leer y escribir árabe desde cero: alfabeto con sonido, clases en vídeo gratis, cuentos de Yuha traducidos y un cuaderno de árabe imprimible en español.",
+    "language_name": "Español",
+    "locale": "es_ES"
+  },
+  "pt": {
+    "title": "Aprender árabe para iniciantes – Aulas grátis, histórias e caderno para imprimir | Arabic Orbit",
+    "description": "Aprenda a ler e escrever árabe do zero: alfabeto com som, aulas em vídeo grátis, histórias de Juha traduzidas e um caderno de árabe para imprimir em português.",
+    "language_name": "Português",
+    "locale": "pt_BR"
+  },
+  "it": {
+    "title": "Imparare l'arabo per principianti – Lezioni gratis, storie e quaderno stampabile | Arabic Orbit",
+    "description": "Impara a leggere e scrivere l'arabo da zero: alfabeto parlante, lezioni video gratuite, storie di Giufà tradotte e un quaderno di arabo stampabile in italiano.",
+    "language_name": "Italiano",
+    "locale": "it_IT"
+  },
+  "de": {
+    "title": "Arabisch lernen für Anfänger – Gratis-Lektionen, Geschichten & Arbeitsheft | Arabic Orbit",
+    "description": "Arabisch lesen und schreiben ab null: sprechendes Alphabet, kostenlose Videolektionen, übersetzte Dschuha-Geschichten und ein druckbares Arabisch-Arbeitsheft auf Deutsch.",
+    "language_name": "Deutsch",
+    "locale": "de_DE"
+  },
+  "nl": {
+    "title": "Arabisch leren voor beginners – Gratis lessen, verhalen & werkboek | Arabic Orbit",
+    "description": "Leer Arabisch lezen en schrijven vanaf nul: sprekend alfabet, gratis videolessen, vertaalde verhalen van Djoeha en een printbaar Arabisch werkboek in het Nederlands.",
+    "language_name": "Nederlands",
+    "locale": "nl_NL"
+  },
+  "tr": {
+    "title": "Sıfırdan Arapça öğren – Ücretsiz dersler, hikâyeler ve yazdırılabilir kitap | Arabic Orbit",
+    "description": "Arapça okuma yazmayı sıfırdan öğrenin: sesli alfabe, ücretsiz video dersler, çevirili Nasreddin Hoca (Cuha) hikâyeleri ve yazdırılabilir Türkçe Arapça çalışma kitabı.",
+    "language_name": "Türkçe",
+    "locale": "tr_TR"
+  },
+  "ru": {
+    "title": "Арабский язык для начинающих – бесплатные уроки, истории и тетрадь | Arabic Orbit",
+    "description": "Научитесь читать и писать по-арабски с нуля: озвученный алфавит, бесплатные видеоуроки, истории о Джухе с переводом и рабочая тетрадь по арабскому на русском.",
+    "language_name": "Русский",
+    "locale": "ru_RU"
+  },
+  "id": {
+    "title": "Belajar bahasa Arab untuk pemula – Pelajaran gratis, kisah & buku latihan | Arabic Orbit",
+    "description": "Belajar membaca dan menulis Arab dari nol: alfabet bersuara, video pelajaran gratis, kisah Juha dengan terjemahan, dan buku latihan bahasa Arab siap cetak dalam bahasa Indonesia.",
+    "language_name": "Bahasa Indonesia",
+    "locale": "id_ID"
+  },
+  "zh": {
+    "title": "零基础学阿拉伯语 – 免费课程、故事和可打印练习册 | Arabic Orbit",
+    "description": "从零开始学习阿拉伯语读写：有声字母表、免费视频课、带翻译的朱哈故事，以及中文版可打印阿拉伯语练习册。",
+    "language_name": "中文",
+    "locale": "zh_CN"
+  }
+}
