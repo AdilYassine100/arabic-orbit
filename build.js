@@ -33,15 +33,60 @@ let tpl=fs.readFileSync('src/template.html','utf8')
   .replace(/{{PRICE}}/g,esc(settings.price))
   .replace(/{{FACEBOOK}}/g,esc(settings.facebook)).replace(/{{YOUTUBE}}/g,esc(settings.youtube))
   .replace(/{{PINTEREST}}/g,esc(settings.pinterest)).replace(/{{SHOP}}/g,esc(settings.shop))
-  .replace('{{DATA}}',()=>JSON.stringify(data).replace(/</g,'\\u003c'));
+  ;
 const cut=tpl.indexOf('</style>')+8;
 let headT=tpl.slice(0,cut).replace(/<title>.*?<\/title>\n?/,'').replace(/<meta name="description"[^>]*>\n?/,'').replace(/<meta name="claude:viewport-fit-sides"[^>]*>\n?/,'');
 const bodyT=tpl.slice(cut);
+
+// YouTube auto-publishing: new videos from the channel whose title ends with "| Lesson 7", "| Leçon 7", "| Lección 7"…
+// are added to that language in content/videos.json (the GitHub workflow saves the file). Each video is added only once:
+// if you delete it in the control panel it does not come back (its id stays in content/youtube-seen.json).
+const YT_WORDS={en:/^lessons?(?=[\s\d]|$)/i,fr:/^le[çc]ons?(?=[\s\d]|$)/i,es:/^(lecci[oó]n|lecciones|clase)(?=[\s\d]|$)/i,
+  pt:/^(aula|li[çc][ãa]o|li[çc][õo]es)(?=[\s\d]|$)/i,it:/^lezion[ei](?=[\s\d]|$)/i,de:/^lektion(en)?(?=[\s\d]|$)/i,
+  nl:/^(les|lessen)(?=[\s\d]|$)/i,tr:/^ders(ler)?(?=[\s\d]|$)/i,ru:/^урок/i,id:/^pelajaran(?=[\s\d]|$)/i,zh:/^(第|课)/};
+const ytId=u=>(String(u||'').match(/(?:v=|shorts\/|youtu\.be\/|embed\/)([\w-]{11})/)||[])[1];
+async function youtubeAuto(){
+  const id=String(settings.youtube_channel_id||'').trim();
+  if(!id||!settings.youtube_auto)return;
+  let xml;
+  try{
+    if(process.env.YT_FEED_FILE)xml=fs.readFileSync(process.env.YT_FEED_FILE,'utf8');
+    else{const r=await fetch('https://www.youtube.com/feeds/videos.xml?channel_id='+encodeURIComponent(id));if(!r.ok)throw new Error('HTTP '+r.status);xml=await r.text();}
+  }catch(e){console.warn('! YouTube feed skipped: '+e.message);return;}
+  const dec=s=>s.replace(/&quot;/g,'"').replace(/&#39;/g,"'").replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&');
+  const tag=(e,t)=>{const m=e.match(new RegExp('<'+t+'>([\\s\\S]*?)</'+t+'>'));return m?dec(m[1].trim()):'';};
+  const seenF=path.join('content','youtube-seen.json');
+  const seen=new Set(fs.existsSync(seenF)?JSON.parse(fs.readFileSync(seenF,'utf8')):[]);
+  const saved=readJSON('videos.json');
+  for(const k in saved)for(const v of saved[k]||[])seen.add(ytId(v.url));
+  for(const k in data.videos)for(const v of data.videos[k]||[])seen.add(ytId(v.url));
+  const added=[];
+  for(const e of (xml.match(/<entry>[\s\S]*?<\/entry>/g)||[]).reverse()){
+    const v=tag(e,'yt:videoId');if(!v||seen.has(v))continue;
+    const full=tag(e,'title'),i=full.lastIndexOf('|');if(i<0)continue;
+    const label=full.slice(i+1).trim(),title=full.slice(0,i).trim();
+    const lang=Object.keys(YT_WORDS).find(k=>YT_WORDS[k].test(label));if(!lang||!seo[lang])continue;
+    const link=(e.match(/<link rel="alternate" href="([^"]+)"/)||[])[1]||'https://www.youtube.com/watch?v='+v;
+    let d=tag(e,'media:description').split('\n').map(s=>s.trim()).find(Boolean)||'';
+    if(d.length>140)d=d.slice(0,137).trim()+'…';
+    const item={label,title,description:d,url:link,glyph:''};
+    (saved[lang]=saved[lang]||[]).push(item);
+    (data.videos[lang]=data.videos[lang]||[]).push(item);
+    seen.add(v);added.push(lang+': '+full);
+  }
+  if(added.length){
+    fs.writeFileSync(path.join('content','videos.json'),JSON.stringify(saved,null,2)+'\n');
+    fs.writeFileSync(seenF,JSON.stringify([...seen].filter(Boolean).sort(),null,2)+'\n');
+  }
+  console.log('YouTube: '+added.length+' new video(s)'+(added.length?'\n  + '+added.join('\n  + '):''));
+}
 
 function rmrf(d){if(fs.existsSync(d))fs.rmSync(d,{recursive:true,force:true});}
 function copyDir(a,b){fs.mkdirSync(b,{recursive:true});for(const f of fs.readdirSync(a)){const s=path.join(a,f),t=path.join(b,f);fs.statSync(s).isDirectory()?copyDir(s,t):fs.copyFileSync(s,t);}}
 
 (async()=>{
+  await youtubeAuto();
+  const DATAJSON=JSON.stringify(data).replace(/</g,'\\u003c');
   rmrf('dist');copyDir('public','dist');
   const sameAs=[settings.facebook,settings.youtube,settings.pinterest].filter(Boolean);
   const b=await chromium.launch();
@@ -71,7 +116,7 @@ ${langs.map(k=>`<link rel="alternate" hreflang="${k}" href="${url(k)}">`).join('
     const p=await b.newPage({viewport:{width:1200,height:900}});
     const errs=[];p.on('pageerror',e=>errs.push(e.message));
     await p.route(/^https?:\/\//,r=>r.abort());
-    await p.setContent(`${head}<body>${bodyT.replace('<!--LANGLINKS-->',links)}</body></html>`,{waitUntil:'domcontentloaded'});
+    await p.setContent(`${head}<body>${bodyT.replace('{{DATA}}',()=>DATAJSON).replace('<!--LANGLINKS-->',links)}</body></html>`,{waitUntil:'domcontentloaded'});
     await p.waitForTimeout(150);
     if(errs.length){console.error(`\n✖ Page error (${l}): ${errs.join(' | ')}\n`);process.exit(1);}
     const body=await p.evaluate(()=>{document.querySelectorAll('.playing').forEach(e=>e.classList.remove('playing'));return document.body.innerHTML;});
