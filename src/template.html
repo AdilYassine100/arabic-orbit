@@ -92,9 +92,10 @@ button.big{display:block;width:100%;background:none;border:0;cursor:pointer;colo
 .vids{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;margin-top:28px}
 .vid{text-decoration:none;display:flex;flex-direction:column;gap:10px}
 .thumb{aspect-ratio:16/9;max-width:100%;border-radius:12px;background:linear-gradient(135deg,#1fbf95,#0e8a6b);display:grid;place-items:center;position:relative;overflow:hidden}
+.thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .thumb .ar{font-family:var(--f-ar);font-size:3rem;color:#fff;direction:rtl}
-.thumb .play{position:absolute;right:10px;bottom:10px;width:38px;height:38px;border-radius:50%;background:var(--gold);display:grid;place-items:center}
-.thumb .dur{position:absolute;left:10px;top:10px;font-size:.72rem;background:rgba(0,0,0,.55);color:#fff;padding:2px 8px;border-radius:999px}
+.thumb .play{position:absolute;z-index:1;right:10px;bottom:10px;width:38px;height:38px;border-radius:50%;background:var(--gold);display:grid;place-items:center}
+.thumb .dur{position:absolute;z-index:1;left:10px;top:10px;font-size:.72rem;background:rgba(0,0,0,.55);color:#fff;padding:2px 8px;border-radius:999px}
 .vid h3{font-size:1.02rem}
 .vid p{margin:0;color:var(--muted);font-size:.88rem}
 .vid:hover h3{color:var(--gold)}
@@ -700,7 +701,7 @@ function setLang(l){
   document.documentElement.lang=lang;
   document.querySelectorAll("[data-i18n]").forEach(el=>{const v=t[el.dataset.i18n];if(v!=null)el.innerHTML=v});
   const vl=(VIDEOS[lang]||[]).filter(v=>v&&v.url);
-  $("vids").innerHTML=vl.length?vl.map(v=>`<a class="vid" href="${esc(v.url)}" target="_blank" rel="noopener"><div class="thumb"><span class="dur">${esc(v.label)}</span><span class="ar">${esc(v.glyph)}</span>${play}</div><h3>${esc(v.title)}</h3><p>${esc(v.description)}</p></a>`).join(""):`<div class="soon"><span class="ar">قريبًا</span><p>${X[lang][0]}</p><a class="btn btn-ghost" href="${esc(SET.videos_fallback||SET.youtube||"#")}" target="_blank" rel="noopener">${X[lang][1]}</a></div>`;
+  $("vids").innerHTML=vl.length?vl.map(v=>`<a class="vid" href="${esc(v.url)}" target="_blank" rel="noopener"><div class="thumb"><span class="dur">${esc(v.label)}</span>${(id=>v.glyph||!id?`<span class="ar">${esc(v.glyph)}</span>`:`<img src="https://i.ytimg.com/vi/${id}/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async">`)((String(v.url||"").match(/(?:v=|shorts\/|youtu\.be\/|embed\/)([\w-]{11})/)||[])[1])}${play}</div><h3>${esc(v.title)}</h3><p>${esc(v.description)}</p></a>`).join(""):`<div class="soon"><span class="ar">قريبًا</span><p>${X[lang][0]}</p><a class="btn btn-ghost" href="${esc(SET.videos_fallback||SET.youtube||"#")}" target="_blank" rel="noopener">${X[lang][1]}</a></div>`;
   if(lang==="en"){$("freeList").innerHTML=t.free.slice(0,3).map((f,i)=>`<a class="fr" href="${FREE[i][1]}" target="_blank" rel="noopener"><span class="ar">${FREE[i][0]}</span><h3>${f[0]}</h3><p>${f[1]}</p><span class="go">${t.dl}</span></a>`).join("")}
   else{const me=E.find(e=>e[0]===CODE[lang]);$("freeList").innerHTML=`<a class="fr fr-wide" href="${P+me[4]}" target="_blank" rel="noopener"><span class="ar">ا ب ت</span><div><h3>${X[lang][2]}</h3><p>${X[lang][3]}</p><span class="go">${t.dl}</span></div></a>`}
   $("langSel").value=lang;
