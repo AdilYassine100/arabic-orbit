@@ -9,6 +9,16 @@ function readJSON(f){
 }
 const settings=readJSON('settings.json'),seo=readJSON('seo.json');
 const data={settings,stories:readJSON('stories.json'),videos:readJSON('videos.json'),books:readJSON('books.json')};
+// API inbox: every content/inbox/*.json file adds one story or one video (used by external tools via the GitHub API)
+const inboxDir=path.join('content','inbox');
+if(fs.existsSync(inboxDir)){
+  for(const f of fs.readdirSync(inboxDir).filter(f=>f.endsWith('.json')).sort()){
+    const it=readJSON('inbox/'+f);
+    if(it.type==='story'){const {type,...s}=it;data.stories.push(s);}
+    else if(it.type==='video'){const {type,lang,...v}=it;const k=lang||'en';(data.videos[k]=data.videos[k]||[]).push(v);}
+    else console.warn('! content/inbox/'+f+': "type" must be "story" or "video" — skipped');
+  }
+}
 // Scheduled publishing: hide drafts and items whose publish_date is in the future
 const NOW=new Date();
 const live=x=>x&&!x.draft&&(!x.publish_date||new Date(x.publish_date)<=NOW);
