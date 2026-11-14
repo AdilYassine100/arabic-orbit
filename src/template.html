@@ -138,6 +138,15 @@ button.big{display:block;width:100%;background:none;border:0;cursor:pointer;colo
 .st-title{margin:0;color:var(--muted);font-size:.92rem}
 .st-text{font-family:var(--f-ar);font-size:1.35rem;line-height:2.1;color:var(--ink)}
 .st-text p{margin:0 0 .35rem}
+.st-play{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.st-listen{display:inline-flex;align-items:center;gap:8px;font:600 .9rem var(--f-display);color:#fff;background:var(--gold);border:0;border-radius:999px;padding:.55rem 1.1rem;cursor:pointer;box-shadow:0 5px 0 -2px #d94e41}
+.st-listen svg{flex:none}
+.st-listen[aria-pressed="true"]{background:var(--teal);box-shadow:0 5px 0 -2px #0e8a6b}
+.st-rate{font:600 .8rem var(--f-display);color:var(--teal);background:transparent;border:2px solid var(--teal);border-radius:999px;padding:.35rem .8rem;cursor:pointer}
+.st-msg{font-size:.85rem;color:var(--muted);margin:0}
+.st-text .w{border-radius:6px;padding:0 2px;transition:background .15s,color .15s;cursor:pointer}
+.st-text .w.read{color:var(--teal)}
+.st-text .w.on{background:var(--gold);color:#fff}
 .st-tog{align-self:flex-start;font:600 .85rem var(--f-display);color:var(--teal);background:transparent;border:2px solid var(--teal);border-radius:999px;padding:.45rem 1rem;cursor:pointer}
 .st-tr{background:var(--bg);border-radius:12px;padding:12px 14px;font-size:.95rem;color:var(--ink)}
 .st-tr p{margin:0}
@@ -687,16 +696,72 @@ const DATA=JSON.parse(document.getElementById("site-data").textContent);
 const SET=DATA.settings||{},PRICE=SET.price||"",VIDEOS=DATA.videos||{},P="";
 const esc=t=>String(t==null?"":t).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/"/g,"&quot;");
 const E=(DATA.books||[]).map(b=>[esc(b.code),esc(b.language),esc(b.edition_title),b.buy_url,b.sample_url,esc(b.buy_label),esc(b.sample_label)]);
-const STORIES=(DATA.stories||[]).map(s=>({ar:esc(s.title_ar),glyph:esc(s.glyph),image:(s.image||"").replace(/^\//,""),text:String(s.text_ar||"").split(/\n+/).map(x=>esc(x.trim())).filter(Boolean)}));
+const STORIES=(DATA.stories||[]).map(s=>({ar:esc(s.title_ar),glyph:esc(s.glyph),image:(s.image||"").replace(/^\//,""),audio:s.audio||"",timings:Array.isArray(s.timings)?s.timings:null,text:String(s.text_ar||"").split(/\n+/).map(x=>esc(x.trim())).filter(Boolean)}));
 for(const k in STR){STR[k].s=(DATA.stories||[]).map(s=>{const tr=s.translations||{},t=(tr[k]&&tr[k].title)?tr[k]:(tr.en||{});return[esc(t.title),esc(t.text),esc(t.moral)]});}
 const IMGB=(()=>{const m=document.querySelector('meta[name="page-lang"]');return m?m.dataset.base:"./"})();
+const LST={en:"Listen",fr:"Écouter",es:"Escuchar",pt:"Ouvir",it:"Ascolta",de:"Anhören",nl:"Luisteren",tr:"Dinle",ru:"Слушать",id:"Dengarkan",zh:"朗读"};
+const PLAYI='<svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1l10 6-10 6z" fill="currentColor"/></svg>',PAUSEI='<svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M2 1h4v12H2zM8 1h4v12H8z" fill="currentColor"/></svg>';
+let RD=null,RATE=1;
+// weight of a word = its letters (without vowel marks) + a pause after punctuation
+const wWeight=w=>{const s=w.textContent,l=s.replace(/[\p{M}ـ]/gu,"").replace(/[^\p{L}]/gu,"").length||1;return l+(/[.!?؟]$/.test(s)?6:/[،,:؛«»"]$/.test(s)?3:0)+1.5};
+function rdMark(st,k){st.words.forEach((w,j)=>{w.classList.toggle("on",j===k);w.classList.toggle("read",j<k)});if(k>=0&&st.words[k]){const r=st.words[k].getBoundingClientRect();if(r.top<70||r.bottom>innerHeight-20)st.words[k].scrollIntoView({block:"center",behavior:"smooth"})}}
+function rdBtn(i,on){const b=document.querySelector(`.st-listen[data-i="${i}"]`);if(b){b.setAttribute("aria-pressed",on);b.firstElementChild.outerHTML=on?PAUSEI:PLAYI}}
+function rdStop(clear){if(!RD)return;const st=RD;RD=null;st.dead=true;clearTimeout(st.tm);cancelAnimationFrame(st.raf);if(st.audio)st.audio.pause();try{speechSynthesis.cancel()}catch(e){}rdBtn(st.i,false);if(clear)rdMark(st,-1)}
+function readStory(i,from,one){
+  if(RD&&RD.i===i&&!one){rdStop(false);return}
+  rdStop(true);
+  const box=$("st-text-"+i),words=[...box.querySelectorAll(".w")],s=STORIES[i],msg=$("st-msg-"+i);msg.hidden=true;
+  const st=RD={i,words,start:from||0};rdBtn(i,true);
+  if(one){speakWords(st,from,from+1);return}
+  if(s.audio){
+    const src=/^https?:/.test(s.audio)?s.audio:IMGB+s.audio.replace(/^\//,"");
+    const au=st.audio=new Audio(src);au.playbackRate=RATE;
+    const wt=words.map(wWeight),tot=wt.reduce((a,b)=>a+b,0);let acc=0;const cum=wt.map(x=>(acc+=x)/tot);
+    const idx=tm=>{if(s.timings&&s.timings.length===words.length){let k=0;while(k+1<words.length&&s.timings[k+1]<=tm)k++;return k}const f=tm/(au.duration||1);let k=0;while(k<cum.length-1&&cum[k]<f)k++;return k};
+    const tick=()=>{if(st.dead)return;rdMark(st,idx(au.currentTime));st.raf=requestAnimationFrame(tick)};
+    au.onloadedmetadata=()=>{if(from&&!s.timings)au.currentTime=(from?cum[from-1]:0)*au.duration};
+    au.onplay=tick;au.onended=()=>{rdMark(st,words.length);rdStop(false)};
+    au.onerror=()=>{if(!st.dead){st.audio=null;speakWords(st,st.start,words.length)}};
+    au.play().catch(()=>{if(!st.dead){st.audio=null;speakWords(st,st.start,words.length)}});
+    return;
+  }
+  speakWords(st,st.start,words.length);
+}
+// Browser voice: one sentence at a time; highlight by boundary events when the voice sends them, otherwise by estimated timing
+function speakWords(st,a,b){
+  const ws=st.words,msg=$("st-msg-"+st.i);
+  if(!("speechSynthesis" in window)){msg.textContent=(SL[lang]||SL.en)[4];msg.hidden=false;rdStop(true);return}
+  pickVoice();try{speechSynthesis.cancel()}catch(e){}
+  const groups=[];let g=[];for(let k=a;k<b;k++){g.push(k);if(/[.!?؟]$/.test(ws[k].textContent)||k===b-1||ws[k].parentNode!==ws[k+1]?.parentNode){groups.push(g);g=[]}}
+  let gi=0,ok=false;
+  const next=()=>{
+    if(st.dead)return;if(gi>=groups.length){rdMark(st,b>=ws.length?ws.length:-1);rdStop(false);return}
+    const grp=groups[gi++],txt=grp.map(k=>ws[k].textContent).join(" ");
+    const offs=[];let p=0;grp.forEach(k=>{offs.push(p);p+=ws[k].textContent.length+1});
+    const u=new SpeechSynthesisUtterance(txt);u.lang="ar-SA";u.rate=.8*RATE;if(arVoice)u.voice=arVoice;
+    let bound=false;
+    u.onstart=()=>{ok=true;msg.hidden=true;rdMark(st,grp[0]);
+      const wt=grp.map(k=>wWeight(ws[k])),per=0.11/(.8*RATE);let j=0;
+      const step=()=>{if(st.dead||bound)return;rdMark(st,grp[j]);j++;if(j<grp.length)st.tm=setTimeout(step,wt[j-1]*per*1000)};
+      st.tm=setTimeout(()=>{if(!bound)step()},120)};
+    u.onboundary=e=>{if(e.name&&e.name!=="word")return;bound=true;clearTimeout(st.tm);let j=0;while(j+1<offs.length&&offs[j+1]<=e.charIndex)j++;rdMark(st,grp[j])};
+    u.onend=()=>{clearTimeout(st.tm);next()};u.onerror=e=>{clearTimeout(st.tm);if(e.error!=="interrupted"&&e.error!=="canceled")next()};
+    speechSynthesis.speak(u);
+  };
+  next();
+  setTimeout(()=>{if(!ok&&!st.dead){msg.textContent=(SL[lang]||SL.en)[4];msg.hidden=false;rdStop(true)}},2500);
+}
 function renderStories(){
   const S=STR[lang]||STR.en,u=S.ui;
   $("stEy").textContent=u[0];$("stH").textContent=u[1];$("stP").textContent=u[2];$("navSt").textContent=u[7];
-  $("storyList").innerHTML=STORIES.map((s,i)=>`<article class="story"><div class="st-img">${s.image?`<img src="${/^https?:/.test(s.image)?s.image:IMGB+s.image}" alt="${S.s[i][0]}" width="720" height="960" loading="lazy" decoding="async">`:`<div class="st-ph" aria-hidden="true"><span>${s.glyph}</span></div>`}</div><div class="st-head"><span class="st-num">${u[6]} ${i+1}</span><h3 class="st-ar" lang="ar" dir="rtl">${s.ar}</h3><p class="st-title">${S.s[i][0]}</p></div><div class="st-text" lang="ar" dir="rtl">${s.text.map(x=>`<p>${x}</p>`).join("")}</div><button type="button" class="st-tog" id="st-tog-${i}" aria-expanded="false">${u[3]}</button><div class="st-tr" id="st-tr-${i}" hidden><p>${S.s[i][1]}</p></div><p class="st-moral"><b>${u[5]}:</b> ${S.s[i][2]}</p></article>`).join("");
+  $("storyList").innerHTML=STORIES.map((s,i)=>`<article class="story"><div class="st-img">${s.image?`<img src="${/^https?:/.test(s.image)?s.image:IMGB+s.image}" alt="${S.s[i][0]}" width="720" height="960" loading="lazy" decoding="async">`:`<div class="st-ph" aria-hidden="true"><span>${s.glyph}</span></div>`}</div><div class="st-head"><span class="st-num">${u[6]} ${i+1}</span><h3 class="st-ar" lang="ar" dir="rtl">${s.ar}</h3><p class="st-title">${S.s[i][0]}</p></div><div class="st-play"><button type="button" class="st-listen" data-i="${i}" aria-pressed="false">${PLAYI}<span>${LST[lang]||LST.en}</span></button><button type="button" class="st-rate" data-i="${i}" aria-label="speed">1×</button><p class="st-msg" id="st-msg-${i}" hidden></p></div><div class="st-text" id="st-text-${i}" lang="ar" dir="rtl">${(()=>{let n=0;return s.text.map(x=>`<p>${x.split(/\s+/).filter(Boolean).map(w=>`<span class="w" data-n="${n++}">${w}</span>`).join(" ")}</p>`).join("")})()}</div><button type="button" class="st-tog" id="st-tog-${i}" aria-expanded="false">${u[3]}</button><div class="st-tr" id="st-tr-${i}" hidden><p>${S.s[i][1]}</p></div><p class="st-moral"><b>${u[5]}:</b> ${S.s[i][2]}</p></article>`).join("");
+  $("storyList").querySelectorAll(".st-listen").forEach(b=>b.onclick=()=>readStory(+b.dataset.i));
+  $("storyList").querySelectorAll(".st-rate").forEach(b=>b.onclick=()=>{RATE=RATE===1?0.75:RATE===0.75?0.5:1;document.querySelectorAll(".st-rate").forEach(x=>x.textContent=RATE+"×");if(RD&&RD.audio)RD.audio.playbackRate=RATE;});
+  $("storyList").querySelectorAll(".st-text .w").forEach(w=>w.onclick=()=>{const i=+w.closest(".st-text").id.slice(8);readStory(i,+w.dataset.n,true)});
   $("storyList").querySelectorAll(".st-tog").forEach((b,i)=>b.onclick=()=>{const tr=$("st-tr-"+i),open=tr.hidden;tr.hidden=!open;b.setAttribute("aria-expanded",open);b.textContent=open?u[4]:u[3]});
 }
 function setLang(l){
+  rdStop(true);
   lang=T[l]?l:"en";const t=T[lang];
   document.documentElement.lang=lang;
   document.querySelectorAll("[data-i18n]").forEach(el=>{const v=t[el.dataset.i18n];if(v!=null)el.innerHTML=v});
