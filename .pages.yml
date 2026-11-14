@@ -84,6 +84,11 @@ content:
         type: image
         options:
           extensions: [webp, jpg, jpeg, png]
+      - name: audio
+        label: تسجيل صوتي للقصة (mp3 — اختياري؛ بدونه يقرأ صوت المتصفح)
+        type: file
+        options:
+          extensions: [mp3, m4a, ogg, wav]
       - name: text_ar
         label: النص العربي (كل جملة في سطر)
         type: text
