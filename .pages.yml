@@ -168,6 +168,7 @@ content:
       - { name: youtube, label: رابط قناة يوتيوب, type: string }
       - { name: pinterest, label: رابط بنتريست, type: string }
       - { name: shop, label: رابط المتجر, type: string }
+      - { name: email, label: البريد الإلكتروني للموقع (يظهر أسفل الصفحة), type: string }
       - { name: videos_fallback, label: الفيديو الذي يظهر للغات بلا فيديوهات, type: string }
       - { name: youtube_auto, label: "نشر فيديوهات يوتيوب الجديدة تلقائيًا (العنوان ينتهي بـ | Lesson 7 أو | Leçon 7…)", type: boolean }
       - { name: youtube_channel_id, label: معرّف قناة يوتيوب (يبدأ بـ UC), type: string }

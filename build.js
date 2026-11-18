@@ -33,6 +33,7 @@ let tpl=fs.readFileSync('src/template.html','utf8')
   .replace(/{{PRICE}}/g,esc(settings.price))
   .replace(/{{FACEBOOK}}/g,esc(settings.facebook)).replace(/{{YOUTUBE}}/g,esc(settings.youtube))
   .replace(/{{PINTEREST}}/g,esc(settings.pinterest)).replace(/{{SHOP}}/g,esc(settings.shop))
+  .replace(settings.email?/<!--\/?EMAIL-->/g:/<!--EMAIL-->[\s\S]*?<!--\/EMAIL-->/g,'').replace(/{{EMAIL}}/g,esc(settings.email))
   ;
 const cut=tpl.indexOf('</style>')+8;
 let headT=tpl.slice(0,cut).replace(/<title>.*?<\/title>\n?/,'').replace(/<meta name="description"[^>]*>\n?/,'').replace(/<meta name="claude:viewport-fit-sides"[^>]*>\n?/,'');
@@ -110,7 +111,7 @@ ${langs.map(k=>`<link rel="alternate" hreflang="${k}" href="${url(k)}">`).join('
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" href="${base}favicon.png">
 <link rel="apple-touch-icon" href="${base}apple-touch-icon.png">
-<script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@type":"WebSite",name:"Arabic Orbit",url:url(l),inLanguage:l,description,publisher:{"@type":"Organization",name:"Arabic Orbit",logo:DOMAIN+"apple-touch-icon.png",sameAs}}).replace(/</g,'\\u003c')}</script>
+<script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@type":"WebSite",name:"Arabic Orbit",url:url(l),inLanguage:l,description,publisher:{"@type":"Organization",name:"Arabic Orbit",logo:DOMAIN+"apple-touch-icon.png",sameAs,...(settings.email?{email:settings.email}:{})}}).replace(/</g,'\\u003c')}</script>
 `;
     const head=`<!doctype html><html lang="${l}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">\n${meta}${headT}</head>`;
     const p=await b.newPage({viewport:{width:1200,height:900}});
