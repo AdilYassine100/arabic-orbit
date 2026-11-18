@@ -171,6 +171,7 @@ content:
       - { name: videos_fallback, label: الفيديو الذي يظهر للغات بلا فيديوهات, type: string }
       - { name: youtube_auto, label: "نشر فيديوهات يوتيوب الجديدة تلقائيًا (العنوان ينتهي بـ | Lesson 7 أو | Leçon 7…)", type: boolean }
       - { name: youtube_channel_id, label: معرّف قناة يوتيوب (يبدأ بـ UC), type: string }
+      - { name: cf_analytics_token, label: رمز إحصاءات Cloudflare (لا تغيّره), type: string }
       - { name: domain, label: النطاق (لا تغيّره إلا إن غيّرت اسم الموقع), type: string }
 
   - name: seo

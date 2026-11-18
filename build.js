@@ -121,7 +121,8 @@ ${langs.map(k=>`<link rel="alternate" hreflang="${k}" href="${url(k)}">`).join('
     if(errs.length){console.error(`\n✖ Page error (${l}): ${errs.join(' | ')}\n`);process.exit(1);}
     const body=await p.evaluate(()=>{document.querySelectorAll('.playing').forEach(e=>e.classList.remove('playing'));return document.body.innerHTML;});
     const dir=l==='en'?'dist':path.join('dist',l);fs.mkdirSync(dir,{recursive:true});
-    fs.writeFileSync(path.join(dir,'index.html'),`${head}<body>${body}</body></html>`);
+    const beacon=settings.cf_analytics_token?`<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "${esc(settings.cf_analytics_token)}"}'></script>`:'';
+    fs.writeFileSync(path.join(dir,'index.html'),`${head}<body>${body}${beacon}</body></html>`);
     console.log('✔',l);
     await p.close();
   }
