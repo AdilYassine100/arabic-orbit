@@ -733,6 +733,7 @@ function speakWords(st,a,b){
   const ws=st.words,msg=$("st-msg-"+st.i);
   if(!("speechSynthesis" in window)){msg.textContent=(SL[lang]||SL.en)[4];msg.hidden=false;rdStop(true);return}
   pickVoice();try{speechSynthesis.cancel()}catch(e){}
+  if(!arVoice&&speechSynthesis.getVoices().length){msg.textContent=(SL[lang]||SL.en)[4];msg.hidden=false;rdStop(true);return}
   const groups=[];let g=[];for(let k=a;k<b;k++){g.push(k);if(/[.!?؟]$/.test(ws[k].textContent)||k===b-1||ws[k].parentNode!==ws[k+1]?.parentNode){groups.push(g);g=[]}}
   let gi=0,ok=false;
   const next=()=>{
