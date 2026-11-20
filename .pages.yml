@@ -1,13 +1,6 @@
 media:
-  - name: images
-    label: الصور
-    input: public/img
-    output: /img
-  - name: audio
-    label: التسجيلات الصوتية
-    input: public/audio
-    output: /audio
-    extensions: [mp3, m4a, ogg, wav]
+  input: public/img
+  output: /img
 
 components:
   translation:
@@ -90,13 +83,11 @@ content:
         label: صورة القصة (عمودية 3:4، يفضَّل أقل من 300 كيلوبايت)
         type: image
         options:
-          media: images
           extensions: [webp, jpg, jpeg, png]
       - name: audio
         label: تسجيل صوتي للقصة (mp3 — اختياري؛ بدونه يقرأ صوت المتصفح)
         type: file
         options:
-          media: audio
           extensions: [mp3, m4a, ogg, wav]
       - name: timings
         label: توقيت الكلمات مع الصوت (يُحسب تلقائيًا، لا تعدّله؛ إن غيّرت النص أو الصوت احذفه)
