@@ -707,7 +707,7 @@ let RD=null,RATE=1;
 const wWeight=w=>{const s=w.textContent,l=s.replace(/[\p{M}ـ]/gu,"").replace(/[^\p{L}]/gu,"").length||1;return l+(/[.!?؟]$/.test(s)?6:/[،,:؛«»"]$/.test(s)?3:0)+1.5};
 function rdMark(st,k){st.words.forEach((w,j)=>{w.classList.toggle("on",j===k);w.classList.toggle("read",j<k)});if(k>=0&&st.words[k]){const r=st.words[k].getBoundingClientRect();if(r.top<70||r.bottom>innerHeight-20)st.words[k].scrollIntoView({block:"center",behavior:"smooth"})}}
 function rdBtn(i,on){const b=document.querySelector(`.st-listen[data-i="${i}"]`);if(b){b.setAttribute("aria-pressed",on);b.firstElementChild.outerHTML=on?PAUSEI:PLAYI}}
-function rdStop(clear){if(!RD)return;const st=RD;RD=null;st.dead=true;clearTimeout(st.tm);cancelAnimationFrame(st.raf);if(st.audio)st.audio.pause();try{speechSynthesis.cancel()}catch(e){}rdBtn(st.i,false);if(clear)rdMark(st,-1)}
+function rdStop(clear){if(!RD)return;const st=RD;RD=null;st.dead=true;clearTimeout(st.tm);clearInterval(st.iv);if(st.audio)st.audio.pause();try{speechSynthesis.cancel()}catch(e){}rdBtn(st.i,false);if(clear)rdMark(st,-1)}
 function readStory(i,from,one){
   if(RD&&RD.i===i&&!one){rdStop(false);return}
   rdStop(true);
@@ -719,9 +719,9 @@ function readStory(i,from,one){
     const au=st.audio=new Audio(src);au.playbackRate=RATE;
     const wt=words.map(wWeight),tot=wt.reduce((a,b)=>a+b,0);let acc=0;const cum=wt.map(x=>(acc+=x)/tot);
     const idx=tm=>{if(s.timings&&s.timings.length===words.length){let k=0;while(k+1<words.length&&s.timings[k+1]<=tm)k++;return k}const f=tm/(au.duration||1);let k=0;while(k<cum.length-1&&cum[k]<f)k++;return k};
-    const tick=()=>{if(st.dead)return;rdMark(st,idx(au.currentTime));st.raf=requestAnimationFrame(tick)};
+    const tick=()=>{if(!st.dead)rdMark(st,idx(au.currentTime))};
     au.onloadedmetadata=()=>{if(from&&!s.timings)au.currentTime=(from?cum[from-1]:0)*au.duration};
-    au.onplay=tick;au.onended=()=>{rdMark(st,words.length);rdStop(false)};
+    au.onplay=()=>{tick();clearInterval(st.iv);st.iv=setInterval(tick,80)};au.ontimeupdate=tick;au.onended=()=>{rdMark(st,words.length);rdStop(false)};
     au.onerror=()=>{if(!st.dead){st.audio=null;speakWords(st,st.start,words.length)}};
     au.play().catch(()=>{if(!st.dead){st.audio=null;speakWords(st,st.start,words.length)}});
     return;
