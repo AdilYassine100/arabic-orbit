@@ -713,9 +713,12 @@ function readStory(i,from,one){
   rdStop(true);
   const box=$("st-text-"+i),words=[...box.querySelectorAll(".w")],s=STORIES[i],msg=$("st-msg-"+i);msg.hidden=true;
   const st=RD={i,words,start:from||0};rdBtn(i,true);
+  const src=s.audio?(/^https?:/.test(s.audio)?s.audio:IMGB+s.audio.replace(/^\//,"")):"";
+  const tm=s.timings&&s.timings.length===words.length?s.timings:null;
+  // a tapped word plays just that word from the recording
+  if(one&&src&&tm){const au=st.audio=new Audio(src);au.playbackRate=RATE;const end=from+1<tm.length?tm[from+1]:1e9;rdMark(st,from);au.onloadedmetadata=()=>{au.currentTime=tm[from];au.play().then(()=>{st.iv=setInterval(()=>{if(au.currentTime>=end-0.03){au.pause();rdStop(false)}},25)}).catch(()=>rdStop(true))};au.onended=()=>rdStop(false);return}
   if(one){speakWords(st,from,from+1);return}
   if(s.audio){
-    const src=/^https?:/.test(s.audio)?s.audio:IMGB+s.audio.replace(/^\//,"");
     const au=st.audio=new Audio(src);au.playbackRate=RATE;
     const wt=words.map(wWeight),tot=wt.reduce((a,b)=>a+b,0);let acc=0;const cum=wt.map(x=>(acc+=x)/tot);
     const idx=tm=>{if(s.timings&&s.timings.length===words.length){let k=0;while(k+1<words.length&&s.timings[k+1]<=tm)k++;return k}const f=tm/(au.duration||1);let k=0;while(k<cum.length-1&&cum[k]<f)k++;return k};
