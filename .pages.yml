@@ -89,6 +89,10 @@ content:
         type: file
         options:
           extensions: [mp3, m4a, ogg, wav]
+      - name: timings
+        label: توقيت الكلمات مع الصوت (يُحسب تلقائيًا، لا تعدّله؛ إن غيّرت النص أو الصوت احذفه)
+        type: number
+        list: true
       - name: text_ar
         label: النص العربي (كل جملة في سطر)
         type: text
