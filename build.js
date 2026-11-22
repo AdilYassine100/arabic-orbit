@@ -123,7 +123,9 @@ ${langs.map(k=>`<link rel="alternate" hreflang="${k}" href="${url(k)}">`).join('
     const body=await p.evaluate(()=>{document.querySelectorAll('.playing').forEach(e=>e.classList.remove('playing'));return document.body.innerHTML;});
     const dir=l==='en'?'dist':path.join('dist',l);fs.mkdirSync(dir,{recursive:true});
     const beacon=settings.cf_analytics_token?`<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "${esc(settings.cf_analytics_token)}"}'></script>`:'';
-    fs.writeFileSync(path.join(dir,'index.html'),`${head}<body>${body}${beacon}</body></html>`);
+    const gid=String(settings.ga_id||'').trim();const ga=/^G-[A-Z0-9]+$/.test(gid)?`<script async src="https://www.googletagmanager.com/gtag/js?id=${gid}"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','${gid}');</script>`:'';
+    const headGa=head.includes('</head>')?head.replace('</head>',ga+'</head>'):head+ga;
+    fs.writeFileSync(path.join(dir,'index.html'),`${headGa}<body>${body}${beacon}</body></html>`);
     console.log('✔',l);
     await p.close();
   }
